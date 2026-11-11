@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { skillCategories, skillEvidence, type Skill } from '../data/portfolio';
 import { EASE, SectionHeading } from './fx';
 
-const HUES = ['#ff3d5a', '#4cc9ff', '#46e3a8', '#ffb547', '#b98bff', '#ff8a5c', '#7ee0ff'];
+const HUES = ['#EBAE29', '#589C80', '#F5EED2', '#46e3a8', '#e5a823', '#48b89f', '#f7ecc9'];
 
 export default function Skills() {
   const [cat, setCat] = useState(0);
@@ -61,7 +61,7 @@ export default function Skills() {
 
 function SkillCard({ skill, hue }: { skill: Skill; hue: string }) {
   const [open, setOpen] = useState(false);
-  const evidence = skillEvidence[skill.name];
+  const evidence = skillEvidence[skill.name] ?? ['Listed in the resume'];
 
   return (
     <motion.button

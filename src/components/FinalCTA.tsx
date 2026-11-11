@@ -17,13 +17,15 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
     { label: "Let's Build", href: `mailto:${profile.email}?subject=${encodeURIComponent("Let's build something")}`, primary: true, cursor: 'play' },
     { label: 'LinkedIn', href: profile.links.linkedin, cursor: 'link' },
     { label: 'GitHub', href: profile.links.github, cursor: 'link' },
+    { label: 'LeetCode', href: profile.links.leetcode, cursor: 'link' },
     { label: 'Email', href: `mailto:${profile.email}`, cursor: 'link' },
+    { label: 'Call', href: `tel:${profile.phone}`, cursor: 'link' },
   ];
 
   return (
     <section id="contact" ref={ref} className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 py-24 text-center">
-      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_60%,rgba(229,19,43,0.18),transparent_70%)]" />
-      <Particles count={36} />
+      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_60%,rgba(235,174,41,0.22),rgba(88,156,128,0.1)_45%,transparent_70%)]" />
+      <Particles count={36} color="235,174,41" />
 
       <motion.p
         className="relative mb-6 text-[11px] font-bold uppercase tracking-[0.5em] text-crimson-2"
@@ -67,7 +69,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                 rel={c.href.startsWith('http') ? 'noreferrer' : undefined}
                 data-cursor={c.cursor}
                 className={`flex min-h-12 items-center gap-2 rounded-full px-7 text-sm font-bold tracking-[0.12em] transition ${
-                  c.primary ? 'bg-crimson text-white shadow-[0_0_50px_rgba(229,19,43,0.5)] hover:bg-crimson-2' : 'border border-white/25 text-bone hover:border-bone hover:bg-white/10'
+                  c.primary ? 'bg-gradient-to-r from-[#EBAE29] to-[#df9d16] text-[#132228] shadow-[0_0_50px_rgba(235,174,41,0.5)] hover:brightness-110' : 'border border-white/25 text-bone hover:border-bone hover:bg-white/10'
                 }`}
               >
                 {c.primary && <span>▶</span>}
@@ -89,11 +91,11 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
       </div>
 
       <footer className="absolute inset-x-0 bottom-0 px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center">
-        <div className="mb-2 text-base">
+        <button type="button" aria-label="Back to home" onClick={() => scrollTo(0, { offset: 0 })} className="mb-2 text-base hover:opacity-80">
           <SeriesMark />
-        </div>
+        </button>
         <p className="text-[11px] leading-relaxed text-smoke">
-          © {new Date().getFullYear()} {profile.displayName}. A personal, streaming-inspired portfolio — not affiliated with any streaming service.
+          © {new Date().getFullYear()} {profile.fullName}. Personal portfolio.
         </p>
       </footer>
     </section>

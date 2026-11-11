@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" role="img" aria-labelledby="title desc">
+  <title id="title">GK monogram</title>
+  <desc id="desc">A decorative monogram for Govind Khandelwal's portfolio.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="36%" r="68%">
+      <stop offset="0" stop-color="#589C80" stop-opacity=".72"/>
+      <stop offset=".58" stop-color="#1c3830" stop-opacity=".46"/>
+      <stop offset="1" stop-color="#132228" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="letters" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#F5EED2"/>
+      <stop offset="1" stop-color="#EBAE29"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="400" cy="500" rx="370" ry="430" fill="url(#glow)"/>
+  <circle cx="400" cy="500" r="280" fill="none" stroke="#589C80" stroke-opacity=".48" stroke-width="2"/>
+  <circle cx="400" cy="500" r="245" fill="none" stroke="#EBAE29" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 14"/>
+  <text x="400" y="575" text-anchor="middle" fill="url(#letters)" font-family="Arial, sans-serif" font-size="230" font-weight="700" letter-spacing="-20">GK</text>
+  <path d="M245 665h310" stroke="#589C80" stroke-opacity=".7" stroke-width="2"/>
+  <text x="400" y="715" text-anchor="middle" fill="#a3b8b1" font-family="Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="8">MATHEMATICS · COMPUTING</text>
+</svg>

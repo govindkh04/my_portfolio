@@ -26,7 +26,7 @@ const ResumeModal = lazy(() => import('./components/ResumeModal'));
 
 type Stage = 'opening' | 'profiles' | 'home';
 
-const STORAGE_KEY = 'sushmita-series-profile';
+const STORAGE_KEY = 'govind-khandelwal-series-profile';
 
 function readStoredProfile(): ProfileId | null {
   try {
@@ -38,6 +38,10 @@ function readStoredProfile(): ProfileId | null {
 }
 
 export default function App() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    return <NotFound />;
+  }
+
   return (
     <SmoothScrollProvider>
       <Series />
@@ -45,10 +49,27 @@ export default function App() {
   );
 }
 
+function NotFound() {
+  useEffect(() => {
+    document.title = 'Page Not Found | Govind Khandelwal';
+    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    description?.setAttribute('content', 'The page you requested could not be found. Return to Govind Khandelwal’s portfolio.');
+  }, []);
+
+  return (
+    <main className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-center">
+      <p className="font-display text-8xl text-crimson-2">404</p>
+      <h1 className="mt-3 font-display text-4xl text-bone">This episode is missing</h1>
+      <p className="mt-3 max-w-md text-sm leading-relaxed text-mist">The address may be outdated or the page may have moved.</p>
+      <a href="/" className="mt-8 rounded-full bg-bone px-6 py-3 text-sm font-semibold text-ink transition hover:bg-white">Return to home</a>
+    </main>
+  );
+}
+
 function Series() {
   const stored = readStoredProfile();
   const [stage, setStage] = useState<Stage>(stored ? 'home' : 'opening');
-  const [profileId, setProfileId] = useState<ProfileId>(stored ?? 'sushmita');
+  const [profileId, setProfileId] = useState<ProfileId>(stored ?? 'govind');
   const [playing, setPlaying] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
   const [resumeOpen, setResumeOpen] = useState(false);
