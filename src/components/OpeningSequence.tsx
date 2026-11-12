@@ -6,14 +6,13 @@ import { EASE, Magnetic } from './fx';
 
 /**
  * The signature moment:
- * black → studio card → GOVIND → THE SERIES → visual reveal → focus → ▶ PLAY
+ * black → studio card → GOVIND → THE SERIES → portrait reveal → ENTER
  */
 const TIMELINE = [
   { at: 300, beat: 1 }, // studio card
   { at: 1900, beat: 2 }, // name
   { at: 2700, beat: 3 }, // THE SERIES
   { at: 3400, beat: 4 }, // portrait
-  { at: 4300, beat: 5 }, // role
   { at: 5000, beat: 6 }, // play button
 ];
 
@@ -92,7 +91,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
           srcSet={profile.portrait.srcSet || undefined}
           sizes="(max-width: 768px) 100vw, 900px"
           alt={profile.portrait.alt}
-          className="h-full w-auto max-w-none object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)]"
+          className="h-full w-auto max-w-none object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)] [filter:drop-shadow(0_0_3px_white)_drop-shadow(0_0_3px_white)]"
 
         />
       </motion.div>
@@ -119,16 +118,8 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
         </motion.p>
       </div>
 
-      {/* role + play */}
+      {/* enter */}
       <div className="absolute inset-x-0 bottom-[9vh] z-20 flex flex-col items-center gap-6 px-4 text-center">
-        <motion.p
-          className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-bone/90 sm:text-sm sm:tracking-[0.4em]"
-          initial={{ opacity: 0, y: 14 }}
-          animate={beat >= 5 ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: EASE }}
-        >
-          {profile.tagline.join('  •  ')}
-        </motion.p>
         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={beat >= 6 ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.7, ease: EASE }}>
           <Magnetic>
             <button
@@ -138,19 +129,12 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
               tabIndex={beat >= 6 ? 0 : -1}
               className="group flex items-center gap-3 rounded-full bg-bone px-9 py-4 font-sans text-base font-bold tracking-wide text-ink shadow-[0_0_60px_rgba(235,174,41,0.45)] transition hover:bg-white"
             >
-              <span className="text-lg transition-transform group-hover:scale-125">▶</span> PLAY
+              ENTER
             </button>
           </Magnetic>
         </motion.div>
       </div>
 
-      <button
-        type="button"
-        onClick={onDone}
-        className="absolute right-4 top-[calc(7vh+12px)] z-40 rounded-full border border-white/20 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-mist transition hover:border-white/60 hover:text-bone"
-      >
-        SKIP INTRO
-      </button>
     </motion.div>
   );
 }

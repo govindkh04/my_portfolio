@@ -22,9 +22,9 @@ export const profile = {
   },
   resumePdf: '/assets/Govind_Khandelwal_Resume.pdf',
   portrait: {
-    src: '/assets/gk-monogram.svg',
+    src: '/assets/pic_me.png',
     srcSet: '',
-    alt: 'Decorative GK monogram',
+    alt: 'Govind Khandelwal',
   },
   interests: ['Generative AI', 'LLM applications', 'Modular system design'],
 };
@@ -293,12 +293,11 @@ export const introSlides: IntroSlide[] = [
   { kicker: 'Contact', title: 'Let’s build', lines: [profile.email, profile.phone, profile.location] },
 ];
 
-export type ProfileId = 'govind' | 'recruiter' | 'developer' | 'creative';
+export type ProfileId = 'govind' | 'recruiter' | 'creative';
 export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
 export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
   { id: 'govind', name: 'Govind', blurb: 'The full series, in order', color: '#EBAE29', order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'] },
   { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, awards & skills first', color: '#589C80', order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'] },
-  { id: 'developer', name: 'Developer', blurb: 'Projects, tools & GitHub first', color: '#46e3a8', order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'] },
   { id: 'creative', name: 'Creative', blurb: 'The story arc & highlights first', color: '#F5EED2', order: ['journey', 'picks', 'originals', 'moments', 'about', 'skills', 'story'] },
 ];
 

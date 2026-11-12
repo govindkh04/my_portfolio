@@ -8,16 +8,16 @@ export function ProfileAvatar({ id, size = 'lg' }: { id: ProfileId; size?: 'sm' 
   const box = size === 'lg' ? 'h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36 rounded-xl' : 'h-8 w-8 rounded-md';
   if (id === 'govind') {
     return (
-      <span className={`relative block overflow-hidden ${box}`} style={{ background: 'radial-gradient(circle at 50% 30%, #589C80, #132228)' }}>
+      <span className={`relative block overflow-hidden ${box}`} style={{ background: 'linear-gradient(145deg, #F5EED2, #132228 120%)' }}>
         <img src={profile.portrait.src} alt="" className="absolute inset-x-0 bottom-0 mx-auto h-[92%] w-auto max-w-none object-contain object-bottom" />
       </span>
     );
   }
-  const glyph = { recruiter: 'R', developer: '</>', creative: '✦' }[id];
+  const glyph = { recruiter: '▤', creative: '✧' }[id];
   return (
     <span
       className={`relative flex items-center justify-center overflow-hidden font-display text-bone ${box}`}
-      style={{ background: `linear-gradient(145deg, ${p.color}, #132228 120%)` }}
+      style={{ background: 'linear-gradient(145deg, #F5EED2, #132228 120%)' }}
     >
       <span className={size === 'lg' ? 'text-4xl sm:text-5xl' : 'text-sm'}>{glyph}</span>
     </span>
@@ -41,7 +41,7 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
       exit={{ opacity: 0, scale: 1.08, filter: 'blur(10px)' }}
       transition={{ duration: 0.7, ease: EASE }}
       role="dialog"
-      aria-label="Who's watching?"
+      aria-label="Ready to Dive In?"
     >
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(88,156,128,0.22),transparent_70%)]" />
       <motion.h2
@@ -50,7 +50,7 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         transition={{ duration: 0.8, ease: EASE }}
       >
-        Who&apos;s watching?
+        Ready to Dive In?
       </motion.h2>
       <motion.ul
         className="relative grid grid-cols-2 gap-6 sm:flex sm:gap-8"
@@ -68,13 +68,12 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
                 )}
               </span>
               <span className="font-sans text-sm font-medium text-mist transition group-hover:text-bone sm:text-base">{p.name}</span>
-              <span className="max-w-[9rem] text-[11px] leading-snug text-smoke">{p.blurb}</span>
             </button>
           </motion.li>
         ))}
       </motion.ul>
       <p className="relative mt-12 max-w-md text-center text-xs leading-relaxed text-smoke">
-        Every profile watches the same true story of {profile.displayName} — it only changes what plays first.
+        Same core arc, different opening credits. Rooted in first principles, built to solve.
       </p>
     </motion.div>
   );
