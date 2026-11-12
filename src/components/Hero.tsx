@@ -173,7 +173,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
           </Magnetic>
           <button
             type="button"
-            onClick={() => scrollTo('#about')}
+            onClick={() => scrollTo('#journey')}
             aria-label="More info"
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-lg text-bone transition hover:border-bone hover:bg-white/10"
           >

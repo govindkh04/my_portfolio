@@ -7,15 +7,12 @@ import OpeningSequence from './components/OpeningSequence';
 import ProfileSelector from './components/ProfileSelector';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ContinueWatching from './components/ContinueWatching';
 import Scene from './components/Scene';
-import About from './components/About';
 import Seasons from './components/Seasons';
 import Originals from './components/Originals';
 import TopPicks from './components/TopPicks';
 import Skills from './components/Skills';
-import Achievements from './components/Achievements';
-import ResumeSection from './components/ResumeViewer';
+import Certifications from './components/Achievements';
 import FinalCTA from './components/FinalCTA';
 import { EASE } from './components/fx';
 
@@ -115,13 +112,11 @@ function Series() {
   const closeResume = useCallback(() => setResumeOpen(false), []);
 
   const sections: Record<SectionId, ReactNode> = {
-    about: <About />,
     journey: <Seasons />,
     originals: <Originals onOpen={setProject} />,
-    picks: <TopPicks />,
     skills: <Skills />,
-    moments: <Achievements />,
-    story: <ResumeSection onView={() => setResumeOpen(true)} />,
+    certifications: <Certifications />,
+    picks: <TopPicks />,
   };
 
   return (
@@ -139,7 +134,6 @@ function Series() {
           <Navbar order={order} profileId={profileId} onSwitch={pickProfile} />
           <main>
             <Hero key={`hero-${profileId}`} onPlay={() => setPlaying(true)} onResume={() => setResumeOpen(true)} profileId={profileId} />
-            <ContinueWatching order={order} />
             {order.map((id) => (
               <Scene key={id} id={id} className={id === 'originals' ? '!py-0 sm:!py-0' : ''}>
                 {sections[id]}

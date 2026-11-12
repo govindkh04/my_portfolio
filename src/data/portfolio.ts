@@ -294,19 +294,17 @@ export const introSlides: IntroSlide[] = [
 ];
 
 export type ProfileId = 'govind' | 'recruiter' | 'creative';
-export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
+export type SectionId = 'journey' | 'originals' | 'skills' | 'certifications' | 'picks';
 export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
-  { id: 'govind', name: 'Govind', blurb: 'The full series, in order', color: '#EBAE29', order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'] },
-  { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, awards & skills first', color: '#589C80', order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'] },
-  { id: 'creative', name: 'Creative', blurb: 'The story arc & highlights first', color: '#F5EED2', order: ['journey', 'picks', 'originals', 'moments', 'about', 'skills', 'story'] },
+  { id: 'govind', name: 'Govind', blurb: 'The full series, in order', color: '#EBAE29', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
+  { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, awards & skills first', color: '#589C80', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
+  { id: 'creative', name: 'Creative', blurb: 'The story arc & highlights first', color: '#F5EED2', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  about: { nav: 'About', card: 'About Me', meta: 'Education · Technical Head', palette: cream },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} chapters · DTU, projects & leadership`, palette: amber },
   originals: { nav: 'Projects', card: 'My Projects', meta: `${projects.length} AI and web projects`, palette: crimson },
-  picks: { nav: 'Highlights', card: 'Highlights', meta: 'Selected resume highlights', palette: jade },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} skill areas`, palette: ocean },
-  moments: { nav: 'Awards', card: 'Awards & Certifications', meta: `${achievements.length} awards · ${certifications.length} certifications`, palette: amber },
-  story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume · View & download', palette: cream },
+  certifications: { nav: 'Certifications', card: 'Certifications', meta: `${certifications.length} credentials`, palette: amber },
+  picks: { nav: 'Highlights', card: 'Highlights', meta: 'Selected resume highlights', palette: jade },
 };
