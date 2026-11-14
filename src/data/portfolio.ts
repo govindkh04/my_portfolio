@@ -9,9 +9,9 @@ export const profile = {
   seriesTag: 'THE SERIES',
   originalLabel: 'A GOVIND KHANDELWAL ORIGINAL',
   role: 'B.Tech Mathematics & Computing Student',
-  tagline: ['Mathematics & Computing', 'AI / Generative AI', 'Full-Stack Development'],
+  tagline: ['Agentic & Generative AI', 'Machine Learning', 'Full-Stack Engineering'],
   intro:
-    'Mathematics & Computing student at Delhi Technological University, building AI-powered applications and browser-based tools with Python, FastAPI, React, JavaScript, and LLMs.',
+    'Building AI-driven products, autonomous workflows, and fast web experiences—rooted in Mathematics & Computing at DTU.',
   location: 'New Delhi, India',
   email: 'govindkhandelwal_ece_25a11057@dtu.ac.in',
   phone: '+917296966160',

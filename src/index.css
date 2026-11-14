@@ -126,21 +126,6 @@ a:focus-visible {
   border-radius: 6px;
 }
 
-.light-streak {
-  position: absolute;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(88, 156, 128, 0.8), rgba(235, 174, 41, 0.9), transparent);
-  filter: blur(0.4px);
-  animation: streak 7s var(--ease-cine) infinite;
-  opacity: 0;
-}
-@keyframes streak {
-  0% { transform: translateX(-40%) scaleX(0.4); opacity: 0; }
-  15% { opacity: 0.9; }
-  45% { transform: translateX(40%) scaleX(1); opacity: 0; }
-  100% { opacity: 0; }
-}
-
 @keyframes shimmer {
   to { background-position: 200% center; }
 }
@@ -155,11 +140,7 @@ a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .grain,
-  .light-streak,
   .shimmer-text {
     animation: none !important;
-  }
-  .light-streak {
-    display: none;
   }
 }

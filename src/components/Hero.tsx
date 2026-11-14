@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
-import { achievements, certifications, education, profile, projects, type ProfileId } from '../data/portfolio';
+import { education, profile, type ProfileId } from '../data/portfolio';
 import { useFinePointer } from '../hooks/useMedia';
-import { useSmoothScroll } from '../hooks/smoothScroll';
 import { EASE, Magnetic, Particles } from './fx';
 import { SeriesMark } from './Poster';
 
@@ -12,10 +11,9 @@ const item = {
   show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.9, ease: EASE } },
 };
 
-export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => void; onResume: () => void; profileId: ProfileId }) {
+export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => void; profileId: ProfileId }) {
   const ref = useRef<HTMLElement>(null);
   const fine = useFinePointer();
-  const { scrollTo } = useSmoothScroll();
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
@@ -37,8 +35,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
   const meta = [
     education[0].period,
     'Mathematics & Computing',
-    `${projects.length} Projects`,
-    `${certifications.length} Certifications`,
+    'Dell Aspire Scholar',
   ];
 
   return (
@@ -58,12 +55,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
         <div className="absolute bottom-[-20%] left-[-10%] h-[70vh] w-[60vw] rounded-full bg-[radial-gradient(closest-side,rgba(88,156,128,0.24),transparent)] blur-2xl" />
       </motion.div>
       <Particles className="z-[1]" color="235,174,41" />
-      <div aria-hidden className="absolute inset-0 z-[1] overflow-hidden">
-        <span className="light-streak left-[40%] top-[22%] w-[50vw]" style={{ animationDelay: '1.2s' }} />
-        <span className="light-streak left-[30%] top-[64%] w-[40vw]" style={{ animationDelay: '3.6s' }} />
-        <span className="light-streak left-[55%] top-[44%] w-[30vw]" style={{ animationDelay: '5.2s' }} />
-      </div>
-
       {/* portrait */}
       <motion.div
         className="absolute inset-x-0 top-12 z-[2] flex h-[64svh] items-end justify-center sm:h-[70svh] lg:bottom-0 lg:left-auto lg:right-[3vw] lg:top-20 lg:h-auto lg:w-[54vw] xl:right-[6vw] xl:w-[48vw]"
@@ -84,7 +75,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
             sizes="(max-width: 1024px) 100vw, 54vw"
             alt={profile.portrait.alt}
 
-            className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)] [mask-image:linear-gradient(to_bottom,black_62%,transparent_97%)]"
+            className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom [filter:drop-shadow(0_0_1.5px_rgba(255,255,255,0.95))_drop-shadow(0_0_5px_rgba(255,255,255,0.5))_drop-shadow(0_30px_60px_rgba(0,0,0,0.6))] [mask-image:linear-gradient(to_bottom,black_62%,transparent_97%)]"
           />
           {/* teal rim light on the image edge */}
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_30%,rgba(88,156,128,0.22),transparent_70%)] mix-blend-screen" />
@@ -144,29 +135,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
               <span className="text-lg">▶</span> Play Intro
             </button>
           </Magnetic>
-          <Magnetic>
-            {profileId === 'recruiter' ? (
-              <button type="button" onClick={onResume} className="glass flex min-h-12 items-center gap-3 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-8">
-                <span className="text-lg">⤓</span> View Resume
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => scrollTo('#originals')}
-                className="glass flex min-h-12 items-center gap-3 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-8"
-              >
-                <span className="text-xl leading-none">＋</span> My Work
-              </button>
-            )}
-          </Magnetic>
-          <button
-            type="button"
-            onClick={() => scrollTo('#journey')}
-            aria-label="More info"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-lg text-bone transition hover:border-bone hover:bg-white/10"
-          >
-            ⓘ
-          </button>
         </motion.div>
       </motion.div>
 
