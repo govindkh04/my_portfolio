@@ -32,8 +32,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
   const imgRotY = useTransform(px, [-1, 1], [-4, 4]);
   const imgRotX = useTransform(py, [-1, 1], [3, -3]);
   const imgShiftX = useTransform(px, [-1, 1], [-10, 10]);
-  const chipX = useTransform(px, [-1, 1], [18, -18]);
-  const chipY = useTransform(py, [-1, 1], [12, -12]);
   const glowX = useTransform(px, [-1, 1], ['-6%', '6%']);
 
   const meta = [
@@ -41,12 +39,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
     'Mathematics & Computing',
     `${projects.length} Projects`,
     `${certifications.length} Certifications`,
-  ];
-
-  const floating = [
-    { text: education[0].score, sub: 'Delhi Technological University', pos: 'left-[2%] top-[30%]', depth: 1 },
-    { text: `${achievements[0].title}`, sub: achievements[0].org, pos: 'right-[0%] top-[18%]', depth: -1 },
-    { text: 'Python · FastAPI · LLMs', sub: 'Tools & focus', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
   ];
 
   return (
@@ -97,10 +89,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
           {/* teal rim light on the image edge */}
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_30%,rgba(88,156,128,0.22),transparent_70%)] mix-blend-screen" />
 
-          {/* floating UI chips */}
-          {floating.map((f, i) => (
-            <FloatChip key={f.text} {...f} index={i} mx={chipX} my={chipY} />
-          ))}
         </motion.div>
       </motion.div>
 
@@ -187,23 +175,3 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
   );
 }
 
-type MV = ReturnType<typeof useTransform<number, number>>;
-
-function FloatChip({ text, sub, pos, depth, index, mx, my }: { text: string; sub: string; pos: string; depth: number; index: number; mx: MV; my: MV }) {
-  const x = useTransform(mx, (n: number) => n * depth);
-  const y = useTransform(my, (n: number) => n * depth);
-  return (
-    <motion.div
-      className={`glass absolute hidden rounded-xl px-4 py-2.5 md:block ${pos}`}
-      style={{ x, y }}
-      initial={{ opacity: 0, filter: 'blur(6px)' }}
-      animate={{ opacity: 1, filter: 'blur(0px)' }}
-      transition={{ duration: 0.9, delay: 1.2 + index * 0.18, ease: EASE }}
-    >
-      <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 5 + index, repeat: Infinity, ease: 'easeInOut' }}>
-        <p className="text-sm font-semibold text-bone">{text}</p>
-        <p className="text-[10px] uppercase tracking-[0.2em] text-mist">{sub}</p>
-      </motion.div>
-    </motion.div>
-  );
-}
