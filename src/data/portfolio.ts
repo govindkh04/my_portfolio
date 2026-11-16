@@ -239,31 +239,39 @@ export const seasons: Season[] = [
     episodes: [
       { code: 'S01 E01', title: 'Class X', description: 'Completed CBSE Class X with 96.0%. The Pratibha Samman Patra recognized this result.', tags: ['CBSE', '96.0%', 'Pratibha Samman Patra'], runtime: 'Royal Academy School', palette: amber },
       { code: 'S01 E02', title: 'Class XII', description: 'Completed Class XII under the CBSE board with 83.6%.', tags: ['CBSE', '83.6%'], runtime: 'Children Academy Convent School', palette: cream },
+      { code: 'S01 E03', title: 'Pratibha Samman Patra 2022', description: 'Awarded by Alwar District Vaishya Mahasammelan Samiti for securing 96.00% in Class 10.', tags: ['Talent Honour Award', 'Academic Excellence'], runtime: '2022', palette: amber },
     ],
   },
   {
-    number: 2, title: 'Mathematics & Computing', period: '2025 – Present',
+    number: 2, title: 'JEE', period: '2025',
+    synopsis: 'The entrance examination milestones that opened the way to the next academic chapter.',
+    episodes: [
+      { code: 'S02 E01', title: 'JEE Main 2025', description: 'Scored 98.9 percentile and CRL 16,788 among 15.39 lakh candidates.', tags: ['98.9 percentile', 'Top 1.1%', 'CRL 16,788'], runtime: '2025', palette: jade },
+      { code: 'S02 E02', title: 'JEE Advanced 2025', description: 'Qualified the JEE Advanced examination from the pool of JEE Main selected candidates.', tags: ['JEE Advanced', 'Qualified'], runtime: '2025', palette: cream },
+    ],
+  },
+  {
+    number: 3, title: 'Mathematics & Computing', period: '2025 – Present',
     synopsis: 'Pursuing a Bachelor of Technology at Delhi Technological University in New Delhi.',
     episodes: [
-      { code: 'S02 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 8.9 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 8.9 / 10'], runtime: '2025 – Present', palette: violet },
-      { code: 'S02 E02', title: 'JEE Main 2025', description: 'Scored 98.9 percentile and CRL 16,788 among 15.39 lakh candidates.', tags: ['98.9 percentile', 'Top 1.1%', 'CRL 16,788'], runtime: '2025', palette: jade },
+      { code: 'S03 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 8.9 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 8.9 / 10'], runtime: '2025 – Present', palette: violet },
     ],
   },
   {
-    number: 3, title: 'Building AI Applications', period: 'Projects',
+    number: 4, title: 'Building AI Applications', period: 'Projects',
     synopsis: 'Three projects spanning conversational AI, browser-based media compression, and AI-assisted resume matching.',
     episodes: projects.map((project, i) => ({
-      code: `S03 E0${i + 1}`, title: project.title,
+      code: `S04 E0${i + 1}`, title: project.title,
       description: project.logline, tags: project.stack.slice(0, 4), runtime: 'Resume project',
       palette: [crimson, amber, ocean][i],
     })),
   },
   {
-    number: 4, title: 'Leadership & Recognition', period: '2022 – 2027',
+    number: 5, title: 'Leadership & Recognition', period: '2022 – 2027',
     synopsis: 'Technical leadership with the SSE Junior Council and recognition for academics, leadership, and technical promise.',
     episodes: [
-      { code: 'S04 E01', title: 'Technical Head', description: 'Technical Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 – 2027', palette: ocean },
-      ...achievements.map((award, i) => ({ code: `S04 E0${i + 2}`, title: award.title, description: award.detail, tags: [award.org], runtime: award.id === 'pratibha-samman' ? '2022' : award.id === 'jee-main' ? '2025' : 'Scholarship', palette: [amber, cream, jade][i] })),
+      { code: 'S05 E01', title: 'Technical Head', description: 'Technical Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 – 2027', palette: ocean },
+      ...achievements.filter(award => !['pratibha-samman', 'jee-main'].includes(award.id)).map((award, i) => ({ code: `S05 E0${i + 2}`, title: award.title, description: award.detail, tags: [award.org], runtime: 'Scholarship', palette: [amber, cream][i] })),
     ],
   },
 ];
