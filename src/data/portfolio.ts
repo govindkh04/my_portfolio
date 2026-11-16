@@ -145,6 +145,10 @@ export const achievements: Achievement[] = [
     detail: 'Awarded the MSDF-backed scholarship focused on professional leadership and technical excellence.', laurel: 'Scholarship',
   },
   {
+    id: 'vijay-shekhar-sharma-scholarship', title: 'Vijay Shekhar Sharma Scholarship (AY 2026–27)', org: 'Delhi Technological University',
+    detail: 'Awarded the Vijay Shekhar Sharma Scholarship at Delhi Technological University during the Golden Pride Function 2026 in recognition of academic performance up to the second semester of B.Tech.', laurel: 'Scholarship',
+  },
+  {
     id: 'pratibha-samman', title: 'Pratibha Samman Patra 2022', org: 'Talent Honour Award',
     detail: 'Awarded by Alwar District Vaishya Mahasammelan Samiti for securing 96.00% in Class 10.', laurel: 'Academic Excellence',
   },
@@ -287,6 +291,7 @@ export const topPicks: TopPick[] = [
   { label: 'AI Project', title: 'TalentAlign', detail: 'Weighted resume matching', palette: violet },
   { label: 'Leadership', title: 'Technical Head', detail: 'SSE Junior Council · 2026–2027', palette: jade },
   { label: 'Scholarship', title: 'Dell Aspire', detail: 'MSDF-backed merit scholarship', palette: amber },
+  { label: 'Scholarship', title: 'Vijay Shekhar Sharma', detail: 'AY 2026–27 · DTU Golden Pride Function 2026', palette: cream },
   { label: 'Certification', title: 'JuniorMBA AI', detail: 'Clever Harvey', palette: crimson },
 ];
 
@@ -296,7 +301,7 @@ export const introSlides: IntroSlide[] = [
   { kicker: 'AI & Generative AI', title: 'Building with LLMs', lines: ['Python · Groq API · Llama 3.3', 'Prompt Engineering · Pydantic · JSON'], chips: ['10+ LLM concepts'] },
   { kicker: 'Projects', title: 'Three Builds', lines: ['AI Portfolio Chatbot · recruiter Q&A and job matching', 'Shrinkr · browser-based media compression', 'TalentAlign · weighted AI resume matching'] },
   { kicker: 'Leadership', title: 'Technical Head', lines: ['Junior Council · Society of Software Engineering', 'Delhi Technological University · 2026–2027'] },
-  { kicker: 'Recognition', title: 'Academic & Technical', lines: ['Dell Aspire Scholar', 'Pratibha Samman Patra · 2022', 'JEE Main 2025 · 98.9 percentile · Top 1.1%'] },
+  { kicker: 'Recognition', title: 'Academic & Technical', lines: ['Dell Aspire Scholar', 'Vijay Shekhar Sharma Scholarship · AY 2026–27', 'Pratibha Samman Patra · 2022', 'JEE Main 2025 · 98.9 percentile · Top 1.1%'] },
   { kicker: 'Certification', title: 'JuniorMBA in Artificial Intelligence', lines: ['Clever Harvey', 'ML · Transformers · Generative AI · RAG · Reinforcement Learning'] },
   { kicker: 'Contact', title: 'Let’s build', lines: [profile.email, profile.phone, profile.location] },
 ];
