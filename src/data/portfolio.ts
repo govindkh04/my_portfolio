@@ -262,13 +262,15 @@ export const seasons: Season[] = [
     ],
   },
   {
-    number: 4, title: 'Building AI Applications', period: 'Projects',
-    synopsis: 'Three projects spanning conversational AI, browser-based media compression, and AI-assisted resume matching.',
-    episodes: projects.map((project, i) => ({
-      code: `S04 E0${i + 1}`, title: project.title,
-      description: project.logline, tags: project.stack.slice(0, 4), runtime: 'Resume project',
-      palette: [crimson, amber, ocean][i],
-    })),
+    number: 4, title: 'Core Technical Stack & Learnings', period: 'Technical Skills',
+    synopsis: 'A snapshot of the tools, methods, and academic foundations developed through coursework and projects.',
+    episodes: [
+      { code: 'S04 E01', title: 'Machine Learning & Deep Learning', description: 'Built skills in tabular feature engineering, ensemble methods, and deep neural architectures, from CNNs to transformers and LLM pipelines.', tags: ['LightGBM', 'CatBoost', 'XGBoost', 'CNNs', 'Transformers', 'LLMs'], runtime: 'Machine Learning', palette: crimson },
+      { code: 'S04 E02', title: 'Full-Stack Web Development', description: 'Built responsive web applications across frontend and backend layers, working with state management, API integration, server-side logic, and database design.', tags: ['Frontend', 'Backend', 'APIs', 'MongoDB', 'SQL'], runtime: 'Web Development', palette: amber },
+      { code: 'S04 E03', title: 'Data Structures & Algorithms', description: 'Applied algorithmic problem-solving techniques, including optimized tree traversals, fast-and-slow pointer patterns, and maximum subarray optimizations in C++.', tags: ['Tree Traversals', 'Two Pointers', 'Maximum Subarray', 'C++'], runtime: 'Problem Solving', palette: ocean },
+      { code: 'S04 E04', title: 'Core Academic Subjects', description: 'Grounded engineering work in foundational mathematics and computing principles, spanning abstract algebra, real analysis, probability, and system design.', tags: ['Abstract Algebra', 'Real Analysis', 'Probability', 'System Design'], runtime: 'Academic Foundations', palette: violet },
+      { code: 'S04 E05', title: 'Programming Languages', description: 'Developed software solutions with Python, JavaScript, and C/C++ for performance-critical and script-driven workflows.', tags: ['Python', 'JavaScript', 'C', 'C++'], runtime: 'Programming', palette: jade },
+    ],
   },
   {
     number: 5, title: 'Leadership & Recognition', period: '2022 – 2027',
