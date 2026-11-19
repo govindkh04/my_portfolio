@@ -136,6 +136,41 @@ export const projects: Project[] = [
     palette: { from: '#152119', via: '#295444', to: '#132228', accent: '#62c29c' },
     motif: 'tenants',
   },
+  {
+    id: 'vidsage',
+    title: 'VidSage — AI-Powered YouTube Search & Revision Assistant',
+    year: '',
+    genre: 'Generative AI · Full-Stack',
+    logline: 'A timestamp-aware RAG assistant that makes long DSA YouTube playlists searchable and easier to revise.',
+    stack: ['Python', 'FastAPI', 'React', 'RAG', 'Qdrant', 'Groq', 'faster-whisper', 'BGE-M3'],
+    build: [
+      'Built a timestamp-aware RAG pipeline for a 128-video DSA playlist, using faster-whisper transcription, 1024-dimensional BGE-M3 embeddings, and Qdrant for semantic retrieval.',
+      'Developed a full-stack AI assistant with FastAPI and React, integrating Groq LLMs, grounded citations, relevance-based refusal, and direct YouTube timestamp navigation.',
+    ],
+    features: ['Semantic search across a 128-video playlist', 'Timestamp-aware citations and YouTube navigation', 'Relevance-based refusal', 'Speech transcription with faster-whisper'],
+    metrics: [{ value: '128', label: 'DSA videos indexed' }, { value: '1024', label: 'embedding dimensions' }, { value: 'Qdrant', label: 'semantic retrieval' }],
+    github: 'https://github.com/govindkhandelwal04102006-ai',
+    palette: { from: '#171326', via: '#49336a', to: '#132228', accent: '#b69cff' },
+    motif: 'flow',
+  },
+  {
+    id: 'autism-screening-classification',
+    title: 'Autism Screening Classification',
+    year: '',
+    genre: 'Machine Learning · Classification',
+    logline: 'A comparative machine learning study for autism screening with a focus on minority-class performance.',
+    stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'SMOTE', 'XGBoost'],
+    build: [
+      'Performed EDA and preprocessing on 800 records across 22 features, including categorical encoding, IQR-based outlier treatment, and SMOTE-based class balancing.',
+      'Trained and compared Decision Tree, Random Forest, and XGBoost classifiers, applying 5-fold cross-validation and RandomizedSearchCV for hyperparameter optimization.',
+      'Selected an optimized Random Forest model achieving 83.75% test accuracy, 92.23% best cross-validation accuracy, and 0.66 F1-score for the minority class.',
+    ],
+    features: ['Exploratory analysis across 22 features', 'IQR-based outlier treatment', 'SMOTE class balancing', '5-fold cross-validation and randomized hyperparameter search'],
+    metrics: [{ value: '83.75%', label: 'test accuracy' }, { value: '92.23%', label: 'best cross-validation accuracy' }, { value: '0.66', label: 'minority-class F1-score' }],
+    github: 'https://github.com/govindkhandelwal04102006-ai',
+    palette: { from: '#17201c', via: '#35634f', to: '#132228', accent: '#7bd5a8' },
+    motif: 'shield',
+  },
 ];
 
 export type Achievement = { id: string; title: string; org: string; detail: string; laurel: string; link?: string };
