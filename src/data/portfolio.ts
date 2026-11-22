@@ -18,7 +18,7 @@ export const profile = {
   phone: '+917296966160',
   links: {
     linkedin: 'https://www.linkedin.com/in/govind-khandelwal-756b18368',
-    github: 'https://github.com/govindkhandelwal04102006-ai',
+    github: 'https://github.com/govindkh04',
     leetcode: 'https://leetcode.com/u/GOVINDK04/',
   },
   resumePdf: '/assets/Govind_Khandelwal_Resume.pdf',
@@ -198,10 +198,12 @@ export type Certification = { issuer: string; name: string; link?: string; detai
 export const certifications: Certification[] = [
   {
     issuer: 'Clever Harvey', name: 'JuniorMBA in Artificial Intelligence',
+    link: 'https://drive.google.com/file/d/1Qi19iFKM_pEJ9yvyZuILzf_v9WGslGZ1/view?usp=drive_link',
     detail: 'Training covered ML, deep learning, neural networks, CNNs, transformers, LLMs, generative AI, prompt engineering, RAG, and reinforcement learning.',
   },
   {
     issuer: 'Data Analysis', name: 'Introduction to Data Analysis using Excel',
+    link: 'https://drive.google.com/file/d/1ScXMWtMVbHSfEq2Z89xFADM84U5LFtjw/view?usp=drive_link',
     detail: 'Data analysis and manipulation, Excel formulas, logical functions, text processing, visualizations, delimited files, and workflow optimization.',
   },
 ];
