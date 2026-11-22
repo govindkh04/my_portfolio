@@ -121,6 +121,7 @@ function Series() {
 
   return (
     <LayoutGroup>
+      <div className={stage === 'opening' ? undefined : 'graphite-theme min-h-screen bg-ink text-bone'}>
       <div className="grain" aria-hidden />
       <CustomCursor />
 
@@ -163,6 +164,7 @@ function Series() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </LayoutGroup>
   );
 }

@@ -50,7 +50,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       <motion.div
         aria-hidden
         className="absolute inset-0"
-        style={{ background: 'radial-gradient(60% 50% at 50% 55%, rgba(235,174,41,0.25), transparent 70%)' }}
+        style={{ background: 'radial-gradient(60% 50% at 50% 55%, rgba(255,201,40,0.25), transparent 70%)' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: beat >= 2 ? [0, 0.9, 0.5, 1] : 0 }}
         transition={{ duration: 1.4 }}
@@ -127,7 +127,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
               data-cursor="play"
               onClick={onDone}
               tabIndex={beat >= 6 ? 0 : -1}
-              className="group flex items-center gap-3 rounded-full bg-bone px-9 py-4 font-sans text-base font-bold tracking-wide text-ink shadow-[0_0_60px_rgba(235,174,41,0.45)] transition hover:bg-white"
+              className="group flex items-center gap-3 rounded-full bg-bone px-9 py-4 font-sans text-base font-bold tracking-wide text-ink shadow-[0_0_60px_rgba(255,201,40,0.45)] transition hover:bg-white"
             >
               ENTER
             </button>

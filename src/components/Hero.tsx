@@ -16,7 +16,7 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
   const fine = useFinePointer();
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  const imgY = useTransform(scrollYProgress, [0, 1], ['-8%', '10%']);
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
@@ -51,10 +51,10 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
     >
       {/* atmosphere */}
       <motion.div aria-hidden className="absolute inset-0" style={{ x: glowX }}>
-        <div className="absolute right-[-10%] top-[-10%] h-[90vh] w-[80vw] rounded-full bg-[radial-gradient(closest-side,rgba(235,174,41,0.28),rgba(88,156,128,0.1)_55%,transparent)] blur-2xl lg:right-[-4%] lg:w-[60vw]" />
-        <div className="absolute bottom-[-20%] left-[-10%] h-[70vh] w-[60vw] rounded-full bg-[radial-gradient(closest-side,rgba(88,156,128,0.24),transparent)] blur-2xl" />
+        <div className="absolute right-[-10%] top-[-10%] h-[90vh] w-[80vw] rounded-full bg-[radial-gradient(closest-side,rgba(242,244,241,0.12),rgba(242,244,241,0.04)_55%,transparent)] blur-2xl lg:right-[-4%] lg:w-[60vw]" />
+        <div className="absolute bottom-[-20%] left-[-10%] h-[70vh] w-[60vw] rounded-full bg-[radial-gradient(closest-side,rgba(28,29,32,0.55),transparent)] blur-2xl" />
       </motion.div>
-      <Particles className="z-[1]" color="235,174,41" />
+      <Particles className="z-[1]" color="255,201,40" />
       {/* portrait */}
       <motion.div
         className="absolute inset-x-0 top-12 z-[2] flex h-[64svh] items-end justify-center sm:h-[70svh] lg:bottom-0 lg:left-auto lg:right-[3vw] lg:top-20 lg:h-auto lg:w-[54vw] xl:right-[6vw] xl:w-[48vw]"
@@ -68,7 +68,7 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
           transition={{ duration: 1.6, ease: EASE, delay: 0.1 }}
         >
           {/* rim light ring */}
-          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full border border-[#589C80]/30 shadow-[0_0_120px_rgba(235,174,41,0.28),inset_0_0_80px_rgba(88,156,128,0.2)]" />
+          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full shadow-[0_0_120px_rgba(242,244,241,0.18),inset_0_0_80px_rgba(242,244,241,0.08)]" />
           <img
             src={profile.portrait.src}
             srcSet={profile.portrait.srcSet || undefined}
@@ -78,14 +78,14 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
             className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom [filter:drop-shadow(0_0_1.5px_rgba(255,255,255,0.95))_drop-shadow(0_0_5px_rgba(255,255,255,0.5))_drop-shadow(0_30px_60px_rgba(0,0,0,0.6))] [mask-image:linear-gradient(to_bottom,black_62%,transparent_97%)]"
           />
           {/* teal rim light on the image edge */}
-          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_30%,rgba(88,156,128,0.22),transparent_70%)] mix-blend-screen" />
+          <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_80%_30%,rgba(242,244,241,0.1),transparent_70%)] mix-blend-screen" />
 
         </motion.div>
       </motion.div>
 
       {/* readability gradients */}
       <div aria-hidden className="absolute inset-x-0 top-[40svh] z-[3] h-[36svh] bg-gradient-to-b from-transparent via-ink/70 to-ink lg:hidden" />
-      <div aria-hidden className="absolute inset-0 z-[3] hidden bg-[linear-gradient(90deg,var(--color-ink)_0%,rgba(19,34,40,0.75)_32%,transparent_58%)] lg:block" />
+      <div aria-hidden className="absolute inset-0 z-[3] hidden bg-[linear-gradient(90deg,var(--color-ink)_0%,rgba(28,29,32,0.75)_32%,transparent_58%)] lg:block" />
       <div aria-hidden className="absolute inset-x-0 bottom-0 z-[3] h-48 bg-gradient-to-t from-ink to-transparent" />
 
       {/* copy */}

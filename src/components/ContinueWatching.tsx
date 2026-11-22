@@ -46,7 +46,7 @@ export default function ContinueWatching({ order }: { order: SectionId[] }) {
                 animate={{ x: shift, scale: fine && hovered === i ? 1.08 : 1, zIndex: hovered === i ? 10 : 1 }}
                 transition={{ duration: 0.5, ease: EASE, delay: 0 }}
               >
-                <div className="relative h-full w-full overflow-hidden rounded-lg ring-1 ring-white/10 transition duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(235,174,41,0.7)]">
+                <div className="relative h-full w-full overflow-hidden rounded-lg ring-1 ring-white/10 transition duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,201,40,0.7)]">
                   <motion.div className="absolute inset-0" animate={{ scale: hovered === i ? 1.12 : 1 }} transition={{ duration: 0.8, ease: EASE }}>
                     <PosterBackdrop palette={meta.palette}>
                       <span className="absolute -right-2 -top-6 font-display text-[8rem] leading-none text-white/[0.07] sm:text-[9rem]">{GLYPHS[id]}</span>
@@ -66,7 +66,7 @@ export default function ContinueWatching({ order }: { order: SectionId[] }) {
                   </span>
                 </div>
                 <div className="mt-2 h-[3px] w-full overflow-hidden rounded bg-white/15">
-                  <motion.div className="h-full origin-left bg-gradient-to-r from-[#EBAE29] to-[#589C80]" animate={{ scaleX: Math.max(0.04, p) }} transition={{ duration: 0.6 }} />
+                  <motion.div className="h-full origin-left bg-gradient-to-r from-[#FFC928] to-[#F2F4F1]" animate={{ scaleX: Math.max(0.04, p) }} transition={{ duration: 0.6 }} />
                 </div>
               </motion.button>
             );

@@ -24,6 +24,24 @@
   --gutter: clamp(16px, 4vw, 56px);
 }
 
+.graphite-theme {
+  --color-ink: #1C1D20;
+  --color-ink-2: #26272B;
+  --color-ink-3: #303136;
+  --color-crimson: #FFC928;
+  --color-crimson-2: #FFC928;
+  --color-bone: #F2F4F1;
+  --color-mist: #C4C7C4;
+  --color-smoke: #858A88;
+  --color-amber: #FFC928;
+  --color-teal: #1C1D20;
+  --color-cream: #F2F4F1;
+  --color-petrol: #1C1D20;
+  color-scheme: dark;
+  background: #1C1D20;
+  color: #F2F4F1;
+}
+
 html {
   position: relative;
   background: var(--color-ink);
@@ -108,12 +126,12 @@ body {
 
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 2px rgba(245, 238, 210, 0.28);
+  -webkit-text-stroke: 2px color-mix(in srgb, var(--color-bone) 28%, transparent);
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(245, 238, 210, 0.08), rgba(88, 156, 128, 0.04));
-  border: 1px solid rgba(245, 238, 210, 0.14);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-bone) 8%, transparent), color-mix(in srgb, var(--color-crimson) 4%, transparent));
+  border: 1px solid color-mix(in srgb, var(--color-bone) 14%, transparent);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
@@ -130,7 +148,7 @@ a:focus-visible {
   to { background-position: 200% center; }
 }
 .shimmer-text {
-  background: linear-gradient(90deg, #F5EED2 0%, #F5EED2 35%, #EBAE29 50%, #589C80 65%, #F5EED2 80%, #F5EED2 100%);
+  background: linear-gradient(90deg, var(--color-bone) 0%, var(--color-bone) 35%, var(--color-crimson) 50%, var(--color-bone) 65%, var(--color-bone) 80%, var(--color-bone) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;

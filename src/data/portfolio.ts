@@ -1,6 +1,7 @@
 /** Content transcribed from Govind Khandelwal's supplied resume. */
 
 export type Palette = { from: string; via: string; to: string; accent: string };
+const graphitePalette: Palette = { from: '#1C1D20', via: '#303136', to: '#1C1D20', accent: '#FFC928' };
 
 export const profile = {
   fullName: 'Govind Khandelwal',
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     features: ['Recruiter Q&A about portfolio content', 'PDF and DOCX job matching', 'Multi-turn conversation memory', 'FastAPI backend and JavaScript frontend'],
     metrics: [{ value: '10+', label: 'LLM concepts integrated' }, { value: 'PDF + DOCX', label: 'job-match formats' }],
     github: 'https://github.com/govindkh04/AI-Portfolio',
-    palette: { from: '#0c1f1a', via: '#1e4f3f', to: '#132228', accent: '#589C80' },
+    palette: graphitePalette,
     motif: 'shield',
   },
   {
@@ -116,7 +117,7 @@ export const projects: Project[] = [
     features: ['MP3 and WAV audio compression', 'PCM decoding and 16-bit conversion', 'Chunk-based MP3 encoding', 'Real-time compression metrics', 'Multi-format media compression extension'],
     metrics: [{ value: 'Up to 70%', label: 'file size reduction' }, { value: '10.87 → 3.25 MB', label: 'example compressed file' }, { value: '6', label: 'team members' }],
     github: 'https://github.com/KartikSisodia217/MACS_Compression_Project',
-    palette: { from: '#1c190a', via: '#5a420e', to: '#132228', accent: '#EBAE29' },
+    palette: graphitePalette,
     motif: 'flow',
   },
   {
@@ -133,7 +134,7 @@ export const projects: Project[] = [
     features: ['PDF and DOCX resume parsing', 'Structured candidate information extraction', 'Pydantic and JSON validation', 'Weighted, case-insensitive matching', 'Hiring recommendation generation'],
     metrics: [{ value: '4', label: 'matching categories' }, { value: 'PDF + DOCX', label: 'resume input formats' }],
     github: 'https://github.com/govindkh04/TalentAlign',
-    palette: { from: '#24151b', via: '#5b2938', to: '#132228', accent: '#d07789' },
+    palette: graphitePalette,
     motif: 'tenants',
   },
   {
@@ -150,7 +151,7 @@ export const projects: Project[] = [
     features: ['Semantic search across a 128-video playlist', 'Timestamp-aware citations and YouTube navigation', 'Relevance-based refusal', 'Speech transcription with faster-whisper'],
     metrics: [{ value: '128', label: 'DSA videos indexed' }, { value: '1024', label: 'embedding dimensions' }, { value: 'Qdrant', label: 'semantic retrieval' }],
     github: 'https://github.com/govindkhandelwal04102006-ai',
-    palette: { from: '#171326', via: '#49336a', to: '#132228', accent: '#b69cff' },
+    palette: graphitePalette,
     motif: 'flow',
   },
   {
@@ -168,7 +169,7 @@ export const projects: Project[] = [
     features: ['Exploratory analysis across 22 features', 'IQR-based outlier treatment', 'SMOTE class balancing', '5-fold cross-validation and randomized hyperparameter search'],
     metrics: [{ value: '83.75%', label: 'test accuracy' }, { value: '92.23%', label: 'best cross-validation accuracy' }, { value: '0.66', label: 'minority-class F1-score' }],
     github: 'https://github.com/govindkhandelwal04102006-ai',
-    palette: { from: '#17202b', via: '#3b526b', to: '#132228', accent: '#8eacc8' },
+    palette: graphitePalette,
     motif: 'shield',
   },
 ];
@@ -280,12 +281,12 @@ export const skillEvidence: Record<string, string[]> = {
 
 export type Episode = { code: string; title: string; description: string; tags: string[]; runtime: string; palette: Palette };
 export type Season = { number: number; title: string; period: string; synopsis: string; episodes: Episode[] };
-const crimson: Palette = { from: '#0c1f1a', via: '#1e4f3f', to: '#132228', accent: '#589C80' };
-const amber: Palette = { from: '#1c190a', via: '#5a420e', to: '#132228', accent: '#EBAE29' };
-const ocean: Palette = { from: '#0f2422', via: '#24594c', to: '#132228', accent: '#589C80' };
-const violet: Palette = { from: '#172223', via: '#38504a', to: '#132228', accent: '#F5EED2' };
-const jade: Palette = { from: '#091c16', via: '#19553f', to: '#132228', accent: '#46e3a8' };
-const cream: Palette = { from: '#182422', via: '#364942', to: '#132228', accent: '#F5EED2' };
+const crimson = graphitePalette;
+const amber = graphitePalette;
+const ocean = graphitePalette;
+const violet = graphitePalette;
+const jade = graphitePalette;
+const cream = graphitePalette;
 
 export const seasons: Season[] = [
   {
@@ -362,9 +363,9 @@ export const introSlides: IntroSlide[] = [
 export type ProfileId = 'govind' | 'recruiter' | 'creative';
 export type SectionId = 'journey' | 'originals' | 'skills' | 'certifications' | 'picks';
 export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
-  { id: 'govind', name: 'Govind', blurb: 'The full series, in order', color: '#EBAE29', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
-  { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, awards & skills first', color: '#589C80', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
-  { id: 'creative', name: 'Creative', blurb: 'The story arc & highlights first', color: '#F5EED2', order: ['journey', 'originals', 'skills', 'certifications', 'picks'] },
+  { id: 'govind', name: 'Govind', blurb: 'The full series, in order', color: '#FFC928', order: ['picks', 'journey', 'originals', 'skills', 'certifications'] },
+  { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, awards & skills first', color: '#1C1D20', order: ['picks', 'journey', 'originals', 'skills', 'certifications'] },
+  { id: 'creative', name: 'Creative', blurb: 'The story arc & highlights first', color: '#F2F4F1', order: ['picks', 'journey', 'originals', 'skills', 'certifications'] },
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {

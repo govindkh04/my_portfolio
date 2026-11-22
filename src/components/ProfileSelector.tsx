@@ -8,7 +8,7 @@ export function ProfileAvatar({ id, size = 'lg' }: { id: ProfileId; size?: 'sm' 
   const box = size === 'lg' ? 'h-24 w-24 sm:h-32 sm:w-32 md:h-36 md:w-36 rounded-xl' : 'h-8 w-8 rounded-md';
   if (id === 'govind') {
     return (
-      <span className={`relative block overflow-hidden ${box}`} style={{ background: 'linear-gradient(145deg, #F5EED2, #132228 120%)' }}>
+    <span className={`relative block overflow-hidden ${box}`} style={{ background: 'linear-gradient(145deg, var(--color-bone), var(--color-ink) 120%)' }}>
         <img src={profile.portrait.src} alt="" className="absolute inset-x-0 bottom-0 mx-auto h-[92%] w-auto max-w-none object-contain object-bottom" />
       </span>
     );
@@ -17,7 +17,7 @@ export function ProfileAvatar({ id, size = 'lg' }: { id: ProfileId; size?: 'sm' 
   return (
     <span
       className={`relative flex items-center justify-center overflow-hidden font-display text-bone ${box}`}
-      style={{ background: 'linear-gradient(145deg, #F5EED2, #132228 120%)' }}
+      style={{ background: 'linear-gradient(145deg, var(--color-bone), var(--color-ink) 120%)' }}
     >
       <span className={size === 'lg' ? 'text-4xl sm:text-5xl' : 'text-sm'}>{glyph}</span>
     </span>
@@ -43,7 +43,7 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
       role="dialog"
       aria-label="Ready to Dive In?"
     >
-      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(88,156,128,0.22),transparent_70%)]" />
+      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(255,201,40,0.12),transparent_70%)]" />
       <motion.h2
         className="relative mb-10 text-center font-sans text-3xl font-medium tracking-tight text-bone sm:text-5xl"
         initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}

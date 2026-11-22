@@ -4,9 +4,9 @@ import type { Project } from '../data/portfolio';
 import { EASE, Tilt } from './fx';
 
 const cardThemes = [
-  { background: '#19463e', outline: '#5a9a87' },
-  { background: '#46350f', outline: '#b88a2e' },
-  { background: '#38423e', outline: '#89978e' },
+  { background: '#1C1D20', outline: '#FFC928' },
+  { background: '#1C1D20', outline: '#FFC928' },
+  { background: '#1C1D20', outline: '#FFC928' },
 ] as const;
 
 export default function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {

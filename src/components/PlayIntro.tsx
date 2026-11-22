@@ -108,7 +108,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
           className="h-[88vh] w-auto max-w-none object-contain [mask-image:linear-gradient(to_bottom,black_60%,transparent)]"
         />
       </motion.div>
-      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,rgba(88,156,128,0.32),rgba(235,174,41,0.12)_45%,transparent_70%)]" />
+      <div aria-hidden className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,rgba(28,29,32,0.32),rgba(255,201,40,0.12)_45%,transparent_70%)]" />
 
       {/* progress bars */}
       {phase !== 'zoom' && (

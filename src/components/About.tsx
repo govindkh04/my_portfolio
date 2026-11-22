@@ -23,7 +23,7 @@ export default function About() {
         >
         <Tilt max={5} className="rounded-2xl">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-white/10">
-            <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_30%,#1f4d3e,#132228_60%,#0e181c)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_30%,#303136,#1C1D20_60%,#111214)]" />
             <div className="absolute inset-0 opacity-50 [background-image:repeating-linear-gradient(90deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_28px)]" />
             <img
               src={profile.portrait.src}
