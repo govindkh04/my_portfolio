@@ -133,7 +133,7 @@ export const projects: Project[] = [
     features: ['PDF and DOCX resume parsing', 'Structured candidate information extraction', 'Pydantic and JSON validation', 'Weighted, case-insensitive matching', 'Hiring recommendation generation'],
     metrics: [{ value: '4', label: 'matching categories' }, { value: 'PDF + DOCX', label: 'resume input formats' }],
     github: 'https://github.com/govindkh04/TalentAlign',
-    palette: { from: '#152119', via: '#295444', to: '#132228', accent: '#62c29c' },
+    palette: { from: '#24151b', via: '#5b2938', to: '#132228', accent: '#d07789' },
     motif: 'tenants',
   },
   {
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     features: ['Exploratory analysis across 22 features', 'IQR-based outlier treatment', 'SMOTE class balancing', '5-fold cross-validation and randomized hyperparameter search'],
     metrics: [{ value: '83.75%', label: 'test accuracy' }, { value: '92.23%', label: 'best cross-validation accuracy' }, { value: '0.66', label: 'minority-class F1-score' }],
     github: 'https://github.com/govindkhandelwal04102006-ai',
-    palette: { from: '#17201c', via: '#35634f', to: '#132228', accent: '#7bd5a8' },
+    palette: { from: '#17202b', via: '#3b526b', to: '#132228', accent: '#8eacc8' },
     motif: 'shield',
   },
 ];

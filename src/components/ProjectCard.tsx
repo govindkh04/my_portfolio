@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import type { Project } from '../data/portfolio';
 import { EASE, Tilt } from './fx';
-import { ProjectArt } from './Poster';
+
+const cardThemes = [
+  { background: '#19463e', outline: '#5a9a87' },
+  { background: '#46350f', outline: '#b88a2e' },
+  { background: '#38423e', outline: '#89978e' },
+] as const;
 
 export default function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
+  const theme = cardThemes[index % cardThemes.length];
   return (
     <motion.article
-      className="w-[84vw] shrink-0 snap-start sm:w-[62vw] lg:w-[46vw] xl:w-[42vw]"
+      className="w-full"
       initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '0px -10% 0px 0px' }}
+      viewport={{ once: true, margin: '0px 0px -8% 0px' }}
       transition={{ duration: 0.9, delay: index * 0.08, ease: EASE }}
     >
       <Tilt max={5} className="group rounded-2xl">
@@ -25,35 +32,41 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
             }
           }}
           aria-label={`Open ${project.title}`}
-          className="focus-ring relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-white/10 transition duration-500 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] group-hover:ring-white/25 sm:aspect-[16/12] lg:aspect-auto lg:h-[66vh]"
+          className="focus-ring relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 transition duration-500 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] md:aspect-auto md:h-[38vh] md:min-h-[280px] md:max-h-[380px]"
+          style={{
+            backgroundColor: `${theme.background}cc`,
+            '--tw-ring-color': `${theme.outline}99`,
+          } as CSSProperties}
         >
-          <motion.div layoutId={`art-${project.id}`} className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute inset-0 transition-transform duration-[1.4s] ease-[var(--ease-cine)] group-hover:scale-[1.07]">
-              <ProjectArt project={project} />
+          <span aria-hidden="true" className="pointer-events-none absolute left-4 top-3 z-0 select-none font-display text-[4rem] leading-[0.78] text-white/[0.07]">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div className="absolute inset-0 z-10 flex flex-col p-5 sm:p-6 [transform:translateZ(40px)]">
+            <div className="flex shrink-0 items-start justify-between">
+              {project.year && <span className="rounded border border-white/30 px-1.5 py-px text-[10px] font-bold text-bone">{project.year}</span>}
+              <div className="ml-auto flex items-center gap-2">
+                <span className="font-display text-xl leading-none text-crimson-2">G</span>
+                <span className="text-[10px] font-bold tracking-[0.34em] text-bone/80">PROJECT</span>
+              </div>
             </div>
-          </motion.div>
 
-          <div className="absolute left-5 top-5 flex items-center gap-2 sm:left-7 sm:top-7">
-            <span className="font-display text-xl leading-none text-crimson-2">G</span>
-            <span className="text-[10px] font-bold tracking-[0.34em] text-bone/80">PROJECT</span>
-          </div>
-          {project.year && <span className="absolute right-5 top-5 rounded border border-white/30 px-1.5 py-px text-[10px] font-bold text-bone sm:right-7 sm:top-7">{project.year}</span>}
-
-          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 [transform:translateZ(40px)]">
-            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-mist">{project.genre}</p>
-            <motion.h3 layoutId={`title-${project.id}`} className="font-display text-[clamp(2.4rem,5vw,4.6rem)] leading-[0.88] tracking-wide text-bone">
+            <div className="mt-auto min-h-0 pt-3">
+            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-mist">{project.genre}</p>
+            <h3 className="line-clamp-2 font-display text-[clamp(1.45rem,2.35vw,2.25rem)] leading-[0.96] tracking-wide text-bone">
               {project.title}
-            </motion.h3>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-bone/75 sm:text-[15px]">{project.logline}</p>
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            </h3>
+            <p className="mt-2 line-clamp-2 max-w-xl text-xs leading-snug text-bone/80 sm:text-sm md:line-clamp-1">
+              {project.logline}
+            </p>
+            <div className="mt-2 flex max-h-[44px] flex-wrap gap-1.5 overflow-hidden">
               {project.stack.map((t) => (
-                <span key={t} className="rounded-full bg-black/35 px-2.5 py-1 text-[11px] font-medium text-bone/90 backdrop-blur">
+                <span key={t} className="rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-medium leading-none text-bone/90 backdrop-blur sm:text-[11px]">
                   {t}
                 </span>
               ))}
             </div>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <span className="flex min-h-11 items-center gap-2 rounded-md bg-bone px-5 text-sm font-bold text-ink transition group-hover:bg-white">▶ View Project</span>
+            <div className="mt-2 flex flex-wrap items-center gap-2">
+              <span className="flex min-h-10 items-center gap-2 rounded-md bg-bone px-4 text-sm font-bold text-ink transition group-hover:bg-white">▶ View Project</span>
               {project.github && (
                 <a
                   href={project.github}
@@ -61,11 +74,12 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
                   rel="noreferrer"
                   data-cursor="link"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex min-h-11 items-center gap-2 rounded-md border border-white/25 bg-black/30 px-4 text-sm font-semibold text-bone backdrop-blur transition hover:border-bone"
+                  className="flex min-h-10 items-center gap-2 rounded-md border border-white/25 bg-black/40 px-4 text-sm font-semibold text-bone backdrop-blur transition hover:border-bone"
                 >
                   GitHub ↗
                 </a>
               )}
+            </div>
             </div>
           </div>
         </div>
