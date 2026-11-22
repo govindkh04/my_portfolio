@@ -209,56 +209,72 @@ export type Skill = { name: string; mono: string; note?: string };
 export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'languages', title: 'Programming & Web', subtitle: 'Languages and web technologies',
+    id: 'languages', title: 'Programming Languages & Web', subtitle: 'Languages and web technologies',
     skills: [
-      { name: 'Python', mono: 'Py' }, { name: 'C / C++', mono: 'C+' }, { name: 'JavaScript', mono: 'Js' },
-      { name: 'MATLAB', mono: 'M' }, { name: 'HTML', mono: 'Ht' }, { name: 'CSS', mono: 'Cs' },
+      { name: 'Python', mono: 'Py' }, { name: 'C/C++', mono: 'C+' }, { name: 'JavaScript', mono: 'Js' },
+      { name: 'HTML', mono: 'Ht' }, { name: 'CSS', mono: 'Cs' }, { name: 'SQL', mono: 'SQL' },
     ],
   },
   {
-    id: 'ai', title: 'AI & Generative AI', subtitle: 'Models, prompts, and LLM applications',
+    id: 'ai', title: 'AI / Generative AI', subtitle: 'Models, prompts, and LLM applications',
     skills: [
       { name: 'Generative AI', mono: 'AI' }, { name: 'LLMs', mono: 'LL' }, { name: 'Prompt Engineering', mono: 'PE' },
-      { name: 'Groq API', mono: 'Gq' }, { name: 'Llama 3.3', mono: 'L3' },
+      { name: 'Groq API', mono: 'Gq' }, { name: 'Llama 3.3', mono: 'L3' }, { name: 'Vector Databases', mono: 'VDB' },
     ],
   },
   {
-    id: 'frameworks', title: 'Frameworks & Tools', subtitle: 'Application development and developer tools',
+    id: 'frameworks', title: 'Frameworks & Libraries', subtitle: 'Application development and data science',
     skills: [
-      { name: 'React', mono: 'Re' }, { name: 'Pydantic', mono: 'Py' }, { name: 'FastAPI', mono: 'Fa' },
-      { name: 'PyPDF', mono: 'PDF' }, { name: 'python-docx', mono: 'Dx' }, { name: 'Git', mono: 'Gt' },
-      { name: 'GitHub', mono: 'GH' }, { name: 'VS Code', mono: 'VS' },
+      { name: 'React.js', mono: 'Re' }, { name: 'FastAPI', mono: 'Fa' }, { name: 'LangGraph', mono: 'LG' },
+      { name: 'Scikit-learn', mono: 'Sk' }, { name: 'Pandas', mono: 'Pd' }, { name: 'NumPy', mono: 'Np' },
+      { name: 'Pydantic', mono: 'Py' }, { name: 'Tailwind CSS', mono: 'Tw' },
     ],
   },
   {
-    id: 'design-data', title: 'Design & Data', subtitle: 'Design tools and spreadsheet analysis',
-    skills: [{ name: 'Figma', mono: 'Fi' }, { name: 'Canva', mono: 'Ca' }, { name: 'Microsoft Excel', mono: 'Xl' }],
+    id: 'tools', title: 'Tools', subtitle: 'Development environments and platforms',
+    skills: [
+      { name: 'VS Code', mono: 'VS' }, { name: 'Git', mono: 'Gt' }, { name: 'GitHub', mono: 'GH' },
+      { name: 'Jupyter Notebook', mono: 'Jn' }, { name: 'Google Colab', mono: 'Co' }, { name: 'Qdrant Cloud', mono: 'Qd' },
+    ],
   },
   {
     id: 'fundamentals', title: 'Core Concepts', subtitle: 'Problem solving and system structure',
     skills: [
-      { name: 'Data Structures & Algorithms', mono: 'DSA' }, { name: 'Modular System Design', mono: 'MS' },
-      { name: 'Problem Solving', mono: 'PS' },
+      { name: 'Data Structures & Algorithms', mono: 'DSA' }, { name: 'OOP', mono: 'OOP' },
+      { name: 'DBMS', mono: 'DB' }, { name: 'Operating Systems', mono: 'OS' },
     ],
   },
 ];
 export const skillEvidence: Record<string, string[]> = {
   Python: ['AI Portfolio Chatbot', 'TalentAlign'],
-  'C / C++': ['Technical skills'],
+  'C/C++': ['Technical skills'],
   JavaScript: ['AI Portfolio Chatbot', 'Shrinkr'],
+  HTML: ['Shrinkr'],
+  CSS: ['Shrinkr'],
+  SQL: ['Technical skills'],
   'Generative AI': ['AI Portfolio Chatbot', 'TalentAlign', 'JuniorMBA in Artificial Intelligence'],
   LLMs: ['AI Portfolio Chatbot', 'TalentAlign'],
   'Prompt Engineering': ['TalentAlign', 'JuniorMBA in Artificial Intelligence'],
   'Groq API': ['AI Portfolio Chatbot', 'TalentAlign'],
   'Llama 3.3': ['TalentAlign'],
-  React: ['Frameworks and tools'],
+  'Vector Databases': ['VidSage'],
+  'React.js': ['VidSage'],
   FastAPI: ['AI Portfolio Chatbot'],
+  LangGraph: ['AI and application development'],
+  'Scikit-learn': ['Autism Screening Classification'],
+  Pandas: ['Autism Screening Classification'],
+  NumPy: ['Autism Screening Classification'],
+  'Tailwind CSS': ['Portfolio'],
+  'Qdrant Cloud': ['VidSage'],
   PyPDF: ['AI Portfolio Chatbot', 'TalentAlign'],
   'python-docx': ['AI Portfolio Chatbot', 'TalentAlign'],
   Figma: ['Design & Data'],
   Canva: ['Design & Data'],
   'Microsoft Excel': ['Introduction to Data Analysis using Excel'],
   'Data Structures & Algorithms': ['Core concepts'],
+  OOP: ['Core concepts'],
+  DBMS: ['Core concepts'],
+  'Operating Systems': ['Core concepts'],
   'Modular System Design': ['Core concepts'],
 };
 
