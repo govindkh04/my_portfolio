@@ -206,6 +206,11 @@ export const certifications: Certification[] = [
     link: 'https://drive.google.com/file/d/1ScXMWtMVbHSfEq2Z89xFADM84U5LFtjw/view?usp=drive_link',
     detail: 'Data analysis and manipulation, Excel formulas, logical functions, text processing, visualizations, delimited files, and workflow optimization.',
   },
+  {
+    issuer: 'Cloudinary', name: 'Cloud to Crowd: Introduction to Media IQ for Developers',
+    link: 'https://drive.google.com/file/d/1oeLtpWg9zC5Eafs3xSJdKEyqi-YuFzFK/view?usp=drive_link',
+    detail: 'Covered intelligent media optimization, dynamic image/media transformations, and scalable delivery strategies for fast, responsive web applications.',
+  },
 ];
 
 export type Skill = { name: string; mono: string; note?: string };
