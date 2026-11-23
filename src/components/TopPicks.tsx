@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile, topPicks } from '../data/portfolio';
 import { useMedia, useReducedMotionPref } from '../hooks/useMedia';
-import { EASE, SectionHeading } from './fx';
+import { SectionHeading } from './fx';
 import { PosterBackdrop } from './Poster';
 
 export default function TopPicks() {
@@ -40,7 +40,7 @@ export default function TopPicks() {
               return (
                 <motion.article
                   key={pick.title}
-                  className={`absolute left-1/2 top-1/2 overflow-hidden rounded-lg shadow-[0_12px_30px_rgba(0,0,0,0.55)] transition-[box-shadow,ring-color] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#FFC928] ${activeIndex === i ? 'ring-2 ring-[#FFC928] shadow-[0_0_22px_rgba(255,201,40,0.3),0_12px_30px_rgba(0,0,0,0.55)]' : 'ring-1 ring-white/20 hover:ring-[#FFC928]/60'}`}
+                  className={`absolute left-1/2 top-1/2 overflow-hidden rounded-lg ring-1 transition-[box-shadow,ring-color] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#FFC928] ${activeIndex === i ? 'ring-[#FFE27A] shadow-[0_0_28px_rgba(255,201,40,0.48),0_12px_30px_rgba(0,0,0,0.55)]' : 'ring-[#FFC928]/35 shadow-[0_12px_30px_rgba(0,0,0,0.55)] hover:ring-[#FFC928]/70'}`}
                   style={{
                     width: cardWidth,
                     height: cardHeight,
@@ -73,10 +73,10 @@ export default function TopPicks() {
                   viewport={{ once: true }}
                 >
                   <PosterBackdrop palette={pick.palette} />
-                  <span aria-hidden="true" className="absolute -right-1 top-0 font-display text-5xl leading-none text-white/[0.08] sm:text-6xl">
+                  <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[44%] z-10 -translate-x-1/2 -translate-y-1/2 scale-y-[1.15] bg-gradient-to-b from-white/15 via-[#FFC928]/25 to-white/15 bg-clip-text font-display text-5xl leading-none text-transparent sm:text-6xl">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div className="absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-black/85 via-transparent to-black/20 p-2 sm:p-4">
+                  <div className="absolute inset-0 z-[2] flex flex-col justify-between bg-gradient-to-t from-black/85 via-transparent to-black/20 p-2 sm:p-4">
                     <span className="text-[6px] font-bold uppercase tracking-[0.12em] text-bone/75 sm:text-[9px] sm:tracking-[0.2em]">{pick.label}</span>
                     <div>
                       <p className="line-clamp-2 font-display text-[12px] leading-[0.92] tracking-wide text-bone sm:text-2xl">{pick.title}</p>
