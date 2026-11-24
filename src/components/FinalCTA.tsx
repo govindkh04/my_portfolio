@@ -10,6 +10,15 @@ export default function FinalCTA() {
     { label: 'Email', href: `mailto:${profile.email}`, cursor: 'link' },
     { label: 'Call', href: `tel:${profile.phone}`, cursor: 'link' },
   ];
+  const footerLinks = [
+    { label: 'GitHub', href: profile.links.github, external: true, icon: <svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22" /></svg> },
+    { label: 'Resume', href: profile.resumePdf, external: true, icon: <svg viewBox="0 0 24 24"><path d="M12 7v14m0-14C10.5 5.7 8.4 5 6 5S1.5 5.7 0 7v13c1.5-1.3 3.6-2 6-2s4.5.7 6 2m0-13c1.5-1.3 3.6-2 6-2s4.5.7 6 2v13c-1.5-1.3-3.6-2-6-2s-4.5.7-6 2" /></svg> },
+    { label: 'LinkedIn', href: profile.links.linkedin, external: true, icon: <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></svg> },
+    { label: 'Portfolio home', href: '#top', external: false, icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" /></svg> },
+    { label: 'LeetCode', href: profile.links.leetcode, external: true, icon: <svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-11-4 14" /></svg> },
+    { label: 'Email', href: `mailto:${profile.email}`, external: false, icon: <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg> },
+    { label: 'Call', href: `tel:${profile.phone}`, external: false, icon: <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z" /></svg> },
+  ];
 
   return (
     <>
@@ -93,6 +102,21 @@ export default function FinalCTA() {
         </div>
       </div>
       <footer className="relative mt-8 pb-2 text-center">
+        <nav aria-label="Contact and profile links" className="mb-5 flex flex-wrap items-center justify-center gap-3">
+          {footerLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noreferrer' : undefined}
+              aria-label={link.label}
+              title={link.label}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.025] text-mist shadow-sm transition hover:border-[#FFC928]/60 hover:bg-[#FFC928]/10 hover:text-[#FFC928] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#FFC928]"
+            >
+              <span aria-hidden="true" className="h-5 w-5 fill-none stroke-current [stroke-width:1.8] [stroke-linecap:round] [stroke-linejoin:round] [&>svg]:h-full [&>svg]:w-full">{link.icon}</span>
+            </a>
+          ))}
+        </nav>
         <p className="flex items-center justify-center gap-2 text-sm font-extrabold tracking-[0.32em]">
           <span className="text-[#FFC928]">G</span><span className="text-bone/75">SERIES</span>
         </p>

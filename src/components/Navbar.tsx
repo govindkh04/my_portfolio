@@ -23,7 +23,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
   });
 
   useEffect(() => {
-    const ids = ['top', ...order];
+    const ids = ['top', ...order, 'contact'];
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
@@ -73,6 +73,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
             {order.map((id) => (
               <NavLink key={id} label={sectionMeta[id].nav} active={active === id} onClick={() => go(id)} />
             ))}
+            <NavLink label="Contact" active={active === 'contact'} onClick={() => go('contact')} />
           </nav>
         </div>
 
@@ -147,7 +148,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            {[{ id: 'top', label: 'Home' }, ...order.map((id) => ({ id, label: sectionMeta[id].nav }))].map((l, i) => (
+            {[{ id: 'top', label: 'Home' }, ...order.map((id) => ({ id, label: sectionMeta[id].nav })), { id: 'contact', label: 'Contact' }].map((l, i) => (
               <motion.button
                 key={l.id}
                 type="button"
