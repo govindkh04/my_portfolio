@@ -12,7 +12,7 @@ export const profile = {
   role: 'B.Tech Mathematics & Computing Student',
   tagline: ['Agentic & Generative AI', 'Machine Learning', 'Full-Stack Engineering'],
   intro:
-    'Building AI-driven products, autonomous workflows, and fast web experiences—rooted in Mathematics & Computing at DTU.',
+    'Building AI products, autonomous workflows, and commercial AI systems with scalable web architecture that turns ideas into production software, grounded in Mathematics & Computing at DTU.',
   location: 'New Delhi, India',
   email: 'govindkhandelwal_ece_25a11057@dtu.ac.in',
   phone: '+917296966160',

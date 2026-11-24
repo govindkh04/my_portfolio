@@ -67,8 +67,8 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
           animate={{ clipPath: 'inset(-30% -30% -10% -30%)', opacity: 1 }}
           transition={{ duration: 1.6, ease: EASE, delay: 0.1 }}
         >
-          {/* rim light ring */}
-          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full shadow-[0_0_120px_rgba(242,244,241,0.18),inset_0_0_80px_rgba(242,244,241,0.08)]" />
+          {/* soft halo behind the portrait */}
+          <div aria-hidden className="absolute bottom-[8%] left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(242,244,241,0.12)_0%,rgba(255,201,40,0.05)_40%,transparent_72%)] blur-2xl" />
           <img
             src={profile.portrait.src}
             srcSet={profile.portrait.srcSet || undefined}
@@ -115,10 +115,6 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
             </span>
           ))}
         </motion.div>
-
-        <motion.p variants={item} className="mt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-bone/90 sm:text-xs sm:tracking-[0.34em]">
-          {profile.tagline.join(' • ')}
-        </motion.p>
 
         <motion.p variants={item} className="mt-4 max-w-xl text-[15px] leading-relaxed text-bone/80 sm:text-base">
           {profile.intro}
