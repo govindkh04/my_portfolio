@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { sectionMeta, viewerProfiles, type ProfileId, type SectionId } from '../data/portfolio';
 import { useSmoothScroll } from '../hooks/smoothScroll';
 import { SeriesMark } from './Poster';
@@ -7,20 +7,11 @@ import { ProfileAvatar } from './ProfileSelector';
 import { EASE } from './fx';
 
 export default function Navbar({ order, profileId, onSwitch }: { order: SectionId[]; profileId: ProfileId; onSwitch: (id: ProfileId) => void }) {
-  const { scrollY } = useScroll();
-  const [solid, setSolid] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [menu, setMenu] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const [active, setActive] = useState<string>('top');
   const { scrollTo } = useSmoothScroll();
   const menuRef = useRef<HTMLDivElement>(null);
-
-  useMotionValueEvent(scrollY, 'change', (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setSolid(y > 40);
-    setHidden(y > 400 && y > prev && !menu && !mobileNav);
-  });
 
   useEffect(() => {
     const ids = ['top', ...order, 'contact'];
@@ -54,21 +45,13 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
   const current = viewerProfiles.find((p) => p.id === profileId)!;
 
   return (
-    <motion.header
-      className="fixed inset-x-0 top-0 z-[60]"
-      animate={{ y: hidden ? '-100%' : '0%' }}
-      transition={{ duration: 0.45, ease: EASE }}
-    >
-      <div
-        className={`gutter flex h-16 items-center justify-between gap-6 transition-[background,backdrop-filter] duration-500 md:h-[72px] ${
-          solid || mobileNav ? 'bg-ink/80 backdrop-blur-xl' : 'bg-gradient-to-b from-black/80 to-transparent'
-        }`}
-      >
+    <header className="fixed inset-x-0 top-0 z-[60] px-3 pt-3 sm:px-5 sm:pt-4">
+      <div className="mx-auto flex h-12 max-w-[1100px] items-center justify-between gap-3 rounded-full border border-[#FFC928]/35 bg-[#111214]/75 px-4 shadow-[0_0_16px_rgba(255,201,40,0.12),0_8px_28px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:h-14 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8 lg:gap-10">
-          <button type="button" onClick={() => go('top')} className="text-[22px]" aria-label="Back to top">
+          <button type="button" onClick={() => go('top')} className="flex h-10 items-center justify-center text-[22px] leading-none sm:h-11" aria-label="Back to top">
             <SeriesMark />
           </button>
-          <nav className="hidden items-center gap-6 lg:flex" aria-label="Sections">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Sections">
             <NavLink label="Home" active={active === 'top'} onClick={() => go('top')} />
             {order.map((id) => (
               <NavLink key={id} label={sectionMeta[id].nav} active={active === id} onClick={() => go(id)} />
@@ -85,7 +68,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
               aria-haspopup="menu"
               aria-expanded={menu}
               aria-label={`Viewing as ${current.name}. Switch profile`}
-              className="flex items-center gap-2 rounded-md p-1"
+              className="flex items-center gap-2 rounded-full p-1 text-bone"
             >
               <ProfileAvatar id={profileId} size="sm" />
               <motion.span animate={{ rotate: menu ? 180 : 0 }} className="text-[10px] text-mist">
@@ -127,7 +110,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
           </div>
           <button
             type="button"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full lg:hidden"
             aria-label={mobileNav ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileNav}
             onClick={() => setMobileNav((v) => !v)}
@@ -142,7 +125,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
         {mobileNav && (
           <motion.nav
             aria-label="Sections"
-            className="gutter border-b border-white/5 bg-ink/95 pb-6 pt-2 backdrop-blur-xl lg:hidden"
+            className="mx-3 rounded-3xl border border-white/10 bg-[#111214]/90 px-4 pb-4 pt-2 shadow-xl backdrop-blur-xl sm:mx-5 lg:hidden"
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -164,15 +147,14 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
           </motion.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
 
 function NavLink({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className={`relative text-[13px] font-medium transition ${active ? 'text-bone' : 'text-mist hover:text-bone'}`}>
+    <button type="button" onClick={onClick} className={`rounded-full px-3 py-2 text-[12px] font-semibold transition sm:px-3.5 sm:text-[13px] ${active ? 'bg-[#FFC928] text-[#1C1D20] shadow-sm' : 'text-mist hover:bg-white/[0.08] hover:text-bone'}`}>
       {label}
-      {active && <motion.span layoutId="nav-underline" className="absolute -bottom-1.5 left-0 right-0 h-[2px] rounded bg-crimson" />}
     </button>
   );
 }
