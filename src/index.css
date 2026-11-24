@@ -116,14 +116,6 @@ body {
   display: none;
 }
 
-/* Custom cursor: hide the native one only when ours is active */
-.has-custom-cursor,
-.has-custom-cursor a,
-.has-custom-cursor button,
-.has-custom-cursor [role='button'] {
-  cursor: none;
-}
-
 .text-outline {
   color: transparent;
   -webkit-text-stroke: 2px color-mix(in srgb, var(--color-bone) 28%, transparent);
