@@ -140,7 +140,7 @@ function Series() {
                 {sections[id]}
               </Scene>
             ))}
-            <FinalCTA onReplay={() => setStage('opening')} />
+            <FinalCTA />
           </main>
         </motion.div>
       )}
