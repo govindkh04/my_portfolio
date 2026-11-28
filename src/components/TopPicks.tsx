@@ -73,7 +73,7 @@ export default function TopPicks() {
                   viewport={{ once: true }}
                 >
                   <PosterBackdrop palette={pick.palette} />
-                  <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[44%] z-10 -translate-x-1/2 -translate-y-1/2 scale-y-[1.15] bg-gradient-to-b from-white/15 via-[#FFC928]/25 to-white/15 bg-clip-text font-display text-5xl leading-none text-transparent sm:text-6xl">
+                  <span aria-hidden="true" className={`pointer-events-none absolute left-1/2 ${[3, 4, 5, 7].includes(i) ? 'top-[40%]' : 'top-[44%]'} z-10 -translate-x-1/2 -translate-y-1/2 scale-y-[1.15] bg-gradient-to-b from-white/15 via-[#FFC928]/25 to-white/15 bg-clip-text font-display text-4xl leading-none text-transparent sm:text-5xl`}>
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="absolute inset-0 z-[2] flex flex-col justify-between bg-gradient-to-t from-black/85 via-transparent to-black/20 p-2 sm:p-4">

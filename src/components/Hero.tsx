@@ -131,6 +131,17 @@ export default function Hero({ onPlay }: { onPlay: () => void; onResume: () => v
               <span className="text-lg">▶</span> Play Intro
             </button>
           </Magnetic>
+          <Magnetic>
+            <a
+              href="https://drive.google.com/file/d/1Ihe2ikjiX8juyKrHksCy_riyMsgOvXkG/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="link"
+              className="glass flex min-h-12 items-center gap-3 rounded-md px-6 py-3 text-[15px] font-bold text-bone transition hover:bg-white/15 sm:px-8"
+            >
+              <span aria-hidden="true" className="text-lg">▤</span> Resume
+            </a>
+          </Magnetic>
         </motion.div>
       </motion.div>
 

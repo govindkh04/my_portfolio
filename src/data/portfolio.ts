@@ -1,4 +1,4 @@
-/** Content transcribed from Govind Khandelwal's supplied resume. */
+﻿/** Content transcribed from Govind Khandelwal's supplied resume. */
 
 export type Palette = { from: string; via: string; to: string; accent: string };
 const graphitePalette: Palette = { from: '#1C1D20', via: '#303136', to: '#1C1D20', accent: '#FFC928' };
@@ -34,21 +34,21 @@ export const education = [
   {
     school: 'Delhi Technological University',
     place: 'New Delhi, India',
-    degree: 'Bachelor of Technology — Mathematics & Computing',
-    period: '2025 – Present',
-    score: 'CGPA 8.9 / 10',
+    degree: 'Bachelor of Technology â€” Mathematics & Computing',
+    period: '2025 â€“ Present',
+    score: 'CGPA 9.0 / 10',
   },
   {
     school: 'Children Academy Convent School',
     place: 'Alwar, Rajasthan',
-    degree: 'Class XII — CBSE',
+    degree: 'Class XII â€” CBSE',
     period: 'Class XII',
     score: '83.6%',
   },
   {
     school: 'Royal Academy School',
     place: 'Alwar, Rajasthan',
-    degree: 'Class X — CBSE',
+    degree: 'Class X â€” CBSE',
     period: 'Class X',
     score: '96.0%',
   },
@@ -57,10 +57,20 @@ export const education = [
 /** The resume lists a student leadership role rather than paid employment. */
 export const experience = [
   {
+    company: 'GCI World (Matsuo-Iwasawa Lab, UTokyo)',
+    role: 'Machine Learning & Business Analytics Fellow',
+    place: 'GCI World',
+    period: '2026',
+    points: [
+      'Built a tuned LightGBM-CatBoost ensemble for Home Credit default prediction, achieving 0.758 validation ROC-AUC across 61,500 test applicants.',
+      'Presented a data-driven business growth proposal in the program competition.',
+    ],
+  },
+  {
     company: 'Society of Software Engineering (SSE)',
-    role: 'Technical Head, Junior Council',
+    role: 'Technical Design Head, Junior Council',
     place: 'Delhi Technological University',
-    period: '2026 – 2027',
+    period: '2026 â€“ 2027',
     points: [
       'Contributed to Shrinkr, a Chrome-based media compressor, and a BAH Hackathon project on satellite-based AQI and HCHO hotspot analysis.',
       'Strengthened data structures and algorithms through regular practice.',
@@ -90,7 +100,7 @@ export const projects: Project[] = [
     id: 'ai-portfolio-chatbot',
     title: 'AI Portfolio Chatbot',
     year: '',
-    genre: 'Generative AI · Full-Stack',
+    genre: 'Generative AI Â· Full-Stack',
     logline: 'A conversational portfolio assistant that answers recruiter questions about skills, projects, and experience.',
     stack: ['Python', 'FastAPI', 'Groq', 'JavaScript', 'Render', 'Vercel'],
     build: [
@@ -105,9 +115,9 @@ export const projects: Project[] = [
   },
   {
     id: 'shrinkr',
-    title: 'Shrinkr — Browser-Based Media Compressor',
+    title: 'Shrinkr â€” Browser-Based Media Compressor',
     year: '',
-    genre: 'Chrome Extension · Media Compression',
+    genre: 'Chrome Extension Â· Media Compression',
     logline: 'A browser-based media compressor for audio and other formats, built with a six-member team.',
     stack: ['JavaScript ES6', 'Chrome Extension API', 'Web Audio API', 'LameJS', 'FFmpeg WASM', 'HTML5', 'CSS3'],
     build: [
@@ -115,16 +125,16 @@ export const projects: Project[] = [
       'Implemented live compression metrics and collaborated with a six-member team on a multi-format media compression extension.',
     ],
     features: ['MP3 and WAV audio compression', 'PCM decoding and 16-bit conversion', 'Chunk-based MP3 encoding', 'Real-time compression metrics', 'Multi-format media compression extension'],
-    metrics: [{ value: 'Up to 70%', label: 'file size reduction' }, { value: '10.87 → 3.25 MB', label: 'example compressed file' }, { value: '6', label: 'team members' }],
+    metrics: [{ value: 'Up to 70%', label: 'file size reduction' }, { value: '10.87 â†’ 3.25 MB', label: 'example compressed file' }, { value: '6', label: 'team members' }],
     github: 'https://github.com/KartikSisodia217/MACS_Compression_Project',
     palette: graphitePalette,
     motif: 'flow',
   },
   {
     id: 'talentalign',
-    title: 'TalentAlign — AI Resume Matcher',
+    title: 'TalentAlign â€” AI Resume Matcher',
     year: '',
-    genre: 'Generative AI · Recruiting',
+    genre: 'Generative AI Â· Recruiting',
     logline: 'An AI resume-matching system that extracts candidate details and scores them against HR requirements.',
     stack: ['Python', 'Groq API', 'Llama 3.3', 'Pydantic', 'Prompt Engineering', 'JSON'],
     build: [
@@ -139,9 +149,9 @@ export const projects: Project[] = [
   },
   {
     id: 'vidsage',
-    title: 'VidSage — AI-Powered YouTube Search & Revision Assistant',
+    title: 'VidSage â€” AI-Powered YouTube Search & Revision Assistant',
     year: '',
-    genre: 'Generative AI · Full-Stack',
+    genre: 'Generative AI Â· Full-Stack',
     logline: 'A timestamp-aware RAG assistant that makes long DSA YouTube playlists searchable and easier to revise.',
     stack: ['Python', 'FastAPI', 'React', 'RAG', 'Qdrant', 'Groq', 'faster-whisper', 'BGE-M3'],
     build: [
@@ -158,7 +168,7 @@ export const projects: Project[] = [
     id: 'autism-screening-classification',
     title: 'Autism Screening Classification',
     year: '',
-    genre: 'Machine Learning · Classification',
+    genre: 'Machine Learning Â· Classification',
     logline: 'A comparative machine learning study for autism screening with a focus on minority-class performance.',
     stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'SMOTE', 'XGBoost'],
     build: [
@@ -181,7 +191,7 @@ export const achievements: Achievement[] = [
     detail: 'Awarded the MSDF-backed scholarship focused on professional leadership and technical excellence.', laurel: 'Scholarship',
   },
   {
-    id: 'vijay-shekhar-sharma-scholarship', title: 'Vijay Shekhar Sharma Scholarship (AY 2026–27)', org: 'Delhi Technological University',
+    id: 'vijay-shekhar-sharma-scholarship', title: 'Vijay Shekhar Sharma Scholarship (AY 2026â€“27)', org: 'Delhi Technological University',
     detail: 'Awarded the Vijay Shekhar Sharma Scholarship at Delhi Technological University during the Golden Pride Function 2026 in recognition of academic performance up to the second semester of B.Tech.', laurel: 'Scholarship',
   },
   {
@@ -234,6 +244,7 @@ export const skillCategories: SkillCategory[] = [
     id: 'frameworks', title: 'Frameworks & Libraries', subtitle: 'Application development and data science',
     skills: [
       { name: 'React.js', mono: 'Re' }, { name: 'FastAPI', mono: 'Fa' }, { name: 'LangGraph', mono: 'LG' },
+      { name: 'LightGBM', mono: 'LGBM' }, { name: 'CatBoost', mono: 'CB' },
       { name: 'Scikit-learn', mono: 'Sk' }, { name: 'Pandas', mono: 'Pd' }, { name: 'NumPy', mono: 'Np' },
       { name: 'Pydantic', mono: 'Py' }, { name: 'Tailwind CSS', mono: 'Tw' },
     ],
@@ -254,6 +265,8 @@ export const skillCategories: SkillCategory[] = [
   },
 ];
 export const skillEvidence: Record<string, string[]> = {
+  LightGBM: ['GCI World fellowship: Home Credit default prediction'],
+  CatBoost: ['GCI World fellowship: Home Credit default prediction'],
   Python: ['AI Portfolio Chatbot', 'TalentAlign'],
   'C/C++': ['Technical skills'],
   JavaScript: ['AI Portfolio Chatbot', 'Shrinkr'],
@@ -297,7 +310,7 @@ const cream = graphitePalette;
 
 export const seasons: Season[] = [
   {
-    number: 1, title: 'Academic Foundations', period: 'Class X – Class XII',
+    number: 1, title: 'Academic Foundations', period: 'Class X â€“ Class XII',
     synopsis: 'Schooling at Royal Academy School and Children Academy Convent School in Alwar, Rajasthan.',
     episodes: [
       { code: 'S01 E01', title: 'Class X', description: 'Completed CBSE Class X with 96.0%. The Pratibha Samman Patra recognized this result.', tags: ['CBSE', '96.0%', 'Pratibha Samman Patra'], runtime: 'Royal Academy School', palette: amber },
@@ -314,28 +327,27 @@ export const seasons: Season[] = [
     ],
   },
   {
-    number: 3, title: 'Mathematics & Computing', period: '2025 – Present',
+    number: 3, title: 'Mathematics & Computing', period: '2025 â€“ Present',
     synopsis: 'Pursuing a Bachelor of Technology at Delhi Technological University in New Delhi.',
     episodes: [
-      { code: 'S03 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 8.9 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 8.9 / 10'], runtime: '2025 – Present', palette: violet },
+      { code: 'S03 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 9.0 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 9.0 / 10'], runtime: '2025 â€“ Present', palette: violet },
     ],
   },
   {
     number: 4, title: 'Core Technical Stack & Learnings', period: 'Technical Skills',
     synopsis: 'A snapshot of the tools, methods, and academic foundations developed through coursework and projects.',
     episodes: [
-      { code: 'S04 E01', title: 'Machine Learning & Deep Learning', description: 'Built skills in tabular feature engineering, ensemble methods, and deep neural architectures, from CNNs to transformers and LLM pipelines.', tags: ['LightGBM', 'CatBoost', 'XGBoost', 'CNNs', 'Transformers', 'LLMs'], runtime: 'Machine Learning', palette: crimson },
-      { code: 'S04 E02', title: 'Full-Stack Web Development', description: 'Built responsive web applications across frontend and backend layers, working with state management, API integration, server-side logic, and database design.', tags: ['Frontend', 'Backend', 'APIs', 'MongoDB', 'SQL'], runtime: 'Web Development', palette: amber },
-      { code: 'S04 E03', title: 'Data Structures & Algorithms', description: 'Applied algorithmic problem-solving techniques, including optimized tree traversals, fast-and-slow pointer patterns, and maximum subarray optimizations in C++.', tags: ['Tree Traversals', 'Two Pointers', 'Maximum Subarray', 'C++'], runtime: 'Problem Solving', palette: ocean },
+      { code: 'S04 E01', title: 'Machine Learning & Deep Learning', description: 'Built machine learning and deep learning solutions across structured data, predictive modeling, and neural architectures, from feature design to generative workflows.', tags: ['Feature Engineering', 'Neural Networks', 'Predictive Modeling', 'Generative AI'], runtime: 'Machine Learning', palette: crimson },
+      { code: 'S04 E02', title: 'Full-Stack Web Development', description: 'Engineered full-stack applications and client-side tools focused on clean user flows, reliable APIs, and maintainable architecture.', tags: ['Full-Stack Development', 'APIs & Databases', 'System Architecture', 'User Experience'], runtime: 'Web Development', palette: amber },
+      { code: 'S04 E03', title: 'Data Structures & Algorithms', description: 'Solved algorithmic challenges using foundational data structures and optimization patterns, emphasizing efficiency, scalability, and clean implementation.', tags: ['Patterns', 'Optimization', 'Scalability', 'C++'], runtime: 'Problem Solving', palette: ocean },
       { code: 'S04 E04', title: 'Core Academic Subjects', description: 'Grounded engineering work in foundational mathematics and computing principles, spanning abstract algebra, real analysis, probability, and system design.', tags: ['Abstract Algebra', 'Real Analysis', 'Probability', 'System Design'], runtime: 'Academic Foundations', palette: violet },
-      { code: 'S04 E05', title: 'Programming Languages', description: 'Developed software solutions with Python, JavaScript, and C/C++ for performance-critical and script-driven workflows.', tags: ['Python', 'JavaScript', 'C', 'C++'], runtime: 'Programming', palette: jade },
     ],
   },
   {
-    number: 5, title: 'Leadership & Recognition', period: '2022 – 2027',
+    number: 5, title: 'Leadership & Recognition', period: '2022 â€“ 2027',
     synopsis: 'Technical leadership with the SSE Junior Council and recognition for academics, leadership, and technical promise.',
     episodes: [
-      { code: 'S05 E01', title: 'Technical Head', description: 'Technical Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 – 2027', palette: ocean },
+      { code: 'S05 E01', title: 'Technical Design Head', description: 'Technical Design Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 â€“ 2027', palette: ocean },
       ...achievements.filter(award => !['pratibha-samman', 'jee-main'].includes(award.id)).map((award, i) => ({ code: `S05 E0${i + 2}`, title: award.title, description: award.detail, tags: [award.org], runtime: 'Scholarship', palette: [amber, cream][i] })),
     ],
   },
@@ -343,30 +355,58 @@ export const seasons: Season[] = [
 
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 export const topPicks: TopPick[] = [
-  { label: 'University', title: 'DTU', detail: 'B.Tech · Mathematics & Computing', palette: violet },
-  { label: 'Current CGPA', title: '8.9 / 10', detail: 'Delhi Technological University', palette: cream },
-  { label: 'JEE Main 2025', title: '98.9', detail: 'Percentile · Top 1.1%', palette: jade },
-  { label: 'School result', title: '96.0%', detail: 'CBSE Class X', palette: amber },
-  { label: 'AI Project', title: 'Portfolio Chatbot', detail: '10+ LLM concepts integrated', palette: crimson },
-  { label: 'Browser Extension', title: 'Shrinkr', detail: 'Up to 70% media file size reduction', palette: ocean },
-  { label: 'AI Project', title: 'TalentAlign', detail: 'Weighted resume matching', palette: violet },
-  { label: 'Leadership', title: 'Technical Head', detail: 'SSE Junior Council · 2026–2027', palette: jade },
+  { label: 'University', title: 'DTU', detail: 'B.Tech Â· Mathematics & Computing', palette: violet },
+  { label: 'Current CGPA', title: '9.0 / 10', detail: 'Delhi Technological University', palette: cream },
+  { label: 'JEE Main 2025', title: '98.9', detail: 'Percentile Â· Top 1.1%', palette: jade },
+  { label: 'Academic Excellence', title: 'Pratibha Samman Patra 2022', detail: 'Talent Honour Award', palette: amber },
+  { label: 'Leadership', title: 'Technical Design Head', detail: 'SSE Junior Council Â· 2026â€“2027', palette: jade },
+  { label: 'Fellowship', title: 'Machine Learning Analytics Fellow', detail: 'GCI World Â· Matsuoâ€“Iwasawa Lab, UTokyo', palette: ocean },
   { label: 'Scholarship', title: 'Dell Aspire', detail: 'MSDF-backed merit scholarship', palette: amber },
-  { label: 'Scholarship', title: 'Vijay Shekhar Sharma', detail: 'AY 2026–27 · DTU Golden Pride Function 2026', palette: cream },
-  { label: 'Certification', title: 'JuniorMBA AI', detail: 'Clever Harvey', palette: crimson },
+  { label: 'Scholarship', title: 'Vijay Shekhar Sharma', detail: 'AY 2026â€“27 Â· DTU Golden Pride Function 2026', palette: cream },
 ];
 
 export type IntroSlide = { kicker: string; title: string; lines: string[]; chips?: string[] };
 export const introSlides: IntroSlide[] = [
-  { kicker: 'Education', title: 'Mathematics & Computing', lines: ['Delhi Technological University · New Delhi', 'Bachelor of Technology · 2025–Present'], chips: ['CGPA 8.9 / 10'] },
-  { kicker: 'AI & Generative AI', title: 'Building with LLMs', lines: ['Python · Groq API · Llama 3.3', 'Prompt Engineering · Pydantic · JSON'], chips: ['10+ LLM concepts'] },
-  { kicker: 'Projects', title: 'Three Builds', lines: ['AI Portfolio Chatbot · recruiter Q&A and job matching', 'Shrinkr · browser-based media compression', 'TalentAlign · weighted AI resume matching'] },
-  { kicker: 'Leadership', title: 'Technical Head', lines: ['Junior Council · Society of Software Engineering', 'Delhi Technological University · 2026–2027'] },
-  { kicker: 'Recognition', title: 'Academic & Technical', lines: ['Dell Aspire Scholar', 'Vijay Shekhar Sharma Scholarship · AY 2026–27', 'Pratibha Samman Patra · 2022', 'JEE Main 2025 · 98.9 percentile · Top 1.1%'] },
-  { kicker: 'Certification', title: 'JuniorMBA in Artificial Intelligence', lines: ['Clever Harvey', 'ML · Transformers · Generative AI · RAG · Reinforcement Learning'] },
-  { kicker: 'Contact', title: 'Let’s build', lines: [profile.email, profile.phone, profile.location] },
+  {
+    kicker: 'Education', title: 'Mathematics & Computing',
+    lines: [
+      `${education[0].school} | ${education[0].place}`,
+      `${education[0].degree} | ${education[0].period}`,
+      `${education[1].school} | Class XII | ${education[1].score}`,
+      `${education[2].school} | Class X | ${education[2].score}`,
+    ], chips: [education[0].score],
+  },
+  {
+    kicker: 'Fellowship', title: experience[0].role,
+    lines: [experience[0].company, ...experience[0].points],
+  },
+  {
+    kicker: 'Projects', title: 'Selected Builds',
+    lines: projects.map((project) => `${project.title} | ${project.logline}`),
+    chips: [`${projects.length} projects`],
+  },
+  {
+    kicker: 'Technical Skills', title: 'Tools & Foundations',
+    lines: skillCategories.map((category) => `${category.title}: ${category.skills.map((skill) => skill.name).join(' | ')}`),
+  },
+  {
+    kicker: 'Technical Chapter', title: seasons.find((season) => season.number === 4)?.title ?? 'Technical Skills',
+    lines: seasons.find((season) => season.number === 4)?.episodes.map((episode) => `${episode.title}: ${episode.description} Tags: ${episode.tags.join(' | ')}`) ?? [],
+  },
+  {
+    kicker: 'Leadership', title: experience[1].role,
+    lines: [experience[1].company, ...experience[1].points],
+  },
+  {
+    kicker: 'Recognition', title: 'Achievements & Awards',
+    lines: achievements.map((award) => `${award.title} | ${award.detail}`),
+  },
+  {
+    kicker: 'Certifications', title: 'Learning & Credentials',
+    lines: certifications.map((certification) => `${certification.name} | ${certification.issuer}${certification.detail ? `: ${certification.detail}` : ''}`),
+  },
+  { kicker: 'Contact', title: "Let's build", lines: [profile.email, profile.phone, profile.location] },
 ];
-
 export type ProfileId = 'govind' | 'recruiter' | 'creative';
 export type SectionId = 'journey' | 'originals' | 'skills' | 'certifications' | 'picks';
 export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
@@ -376,9 +416,10 @@ export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} chapters · DTU, projects & leadership`, palette: amber },
+  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} chapters Â· DTU, projects & leadership`, palette: amber },
   originals: { nav: 'Projects', card: 'My Projects', meta: `${projects.length} AI and web projects`, palette: crimson },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} skill areas`, palette: ocean },
   certifications: { nav: 'Certifications', card: 'Certifications', meta: `${certifications.length} credentials`, palette: amber },
   picks: { nav: 'Highlights', card: 'Highlights', meta: 'Selected resume highlights', palette: jade },
 };
+
