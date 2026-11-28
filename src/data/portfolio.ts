@@ -34,21 +34,21 @@ export const education = [
   {
     school: 'Delhi Technological University',
     place: 'New Delhi, India',
-    degree: 'Bachelor of Technology â€” Mathematics & Computing',
-    period: '2025 â€“ Present',
+    degree: 'Bachelor of Technology - Mathematics & Computing',
+    period: '2025 - Present',
     score: 'CGPA 9.0 / 10',
   },
   {
     school: 'Children Academy Convent School',
     place: 'Alwar, Rajasthan',
-    degree: 'Class XII â€” CBSE',
+    degree: 'Class XII - CBSE',
     period: 'Class XII',
     score: '83.6%',
   },
   {
     school: 'Royal Academy School',
     place: 'Alwar, Rajasthan',
-    degree: 'Class X â€” CBSE',
+    degree: 'Class X - CBSE',
     period: 'Class X',
     score: '96.0%',
   },
@@ -70,7 +70,7 @@ export const experience = [
     company: 'Society of Software Engineering (SSE)',
     role: 'Technical Design Head, Junior Council',
     place: 'Delhi Technological University',
-    period: '2026 â€“ 2027',
+    period: '2026 - 2027',
     points: [
       'Contributed to Shrinkr, a Chrome-based media compressor, and a BAH Hackathon project on satellite-based AQI and HCHO hotspot analysis.',
       'Strengthened data structures and algorithms through regular practice.',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       'Implemented live compression metrics and collaborated with a six-member team on a multi-format media compression extension.',
     ],
     features: ['MP3 and WAV audio compression', 'PCM decoding and 16-bit conversion', 'Chunk-based MP3 encoding', 'Real-time compression metrics', 'Multi-format media compression extension'],
-    metrics: [{ value: 'Up to 70%', label: 'file size reduction' }, { value: '10.87 â†’ 3.25 MB', label: 'example compressed file' }, { value: '6', label: 'team members' }],
+    metrics: [{ value: 'Up to 70%', label: 'file size reduction' }, { value: '10.87 -> 3.25 MB', label: 'example compressed file' }, { value: '6', label: 'team members' }],
     github: 'https://github.com/KartikSisodia217/MACS_Compression_Project',
     palette: graphitePalette,
     motif: 'flow',
@@ -191,7 +191,7 @@ export const achievements: Achievement[] = [
     detail: 'Awarded the MSDF-backed scholarship focused on professional leadership and technical excellence.', laurel: 'Scholarship',
   },
   {
-    id: 'vijay-shekhar-sharma-scholarship', title: 'Vijay Shekhar Sharma Scholarship (AY 2026â€“27)', org: 'Delhi Technological University',
+    id: 'vijay-shekhar-sharma-scholarship', title: 'Vijay Shekhar Sharma Scholarship (AY 2026-27)', org: 'Delhi Technological University',
     detail: 'Awarded the Vijay Shekhar Sharma Scholarship at Delhi Technological University during the Golden Pride Function 2026 in recognition of academic performance up to the second semester of B.Tech.', laurel: 'Scholarship',
   },
   {
@@ -310,7 +310,7 @@ const cream = graphitePalette;
 
 export const seasons: Season[] = [
   {
-    number: 1, title: 'Academic Foundations', period: 'Class X â€“ Class XII',
+    number: 1, title: 'Academic Foundations', period: 'Class X - Class XII',
     synopsis: 'Schooling at Royal Academy School and Children Academy Convent School in Alwar, Rajasthan.',
     episodes: [
       { code: 'S01 E01', title: 'Class X', description: 'Completed CBSE Class X with 96.0%. The Pratibha Samman Patra recognized this result.', tags: ['CBSE', '96.0%', 'Pratibha Samman Patra'], runtime: 'Royal Academy School', palette: amber },
@@ -327,10 +327,10 @@ export const seasons: Season[] = [
     ],
   },
   {
-    number: 3, title: 'Mathematics & Computing', period: '2025 â€“ Present',
+    number: 3, title: 'Mathematics & Computing', period: '2025 - Present',
     synopsis: 'Pursuing a Bachelor of Technology at Delhi Technological University in New Delhi.',
     episodes: [
-      { code: 'S03 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 9.0 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 9.0 / 10'], runtime: '2025 â€“ Present', palette: violet },
+      { code: 'S03 E01', title: 'The DTU Chapter', description: 'B.Tech in Mathematics & Computing at Delhi Technological University, with a CGPA of 9.0 / 10.', tags: ['B.Tech', 'Mathematics & Computing', 'CGPA 9.0 / 10'], runtime: '2025 - Present', palette: violet },
     ],
   },
   {
@@ -344,10 +344,10 @@ export const seasons: Season[] = [
     ],
   },
   {
-    number: 5, title: 'Leadership & Recognition', period: '2022 â€“ 2027',
+    number: 5, title: 'Leadership & Recognition', period: '2022 - 2027',
     synopsis: 'Technical leadership with the SSE Junior Council and recognition for academics, leadership, and technical promise.',
     episodes: [
-      { code: 'S05 E01', title: 'Technical Design Head', description: 'Technical Design Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 â€“ 2027', palette: ocean },
+      { code: 'S05 E01', title: 'Technical Design Head', description: 'Technical Design Head, Junior Council, Society of Software Engineering at DTU.', tags: ['SSE', 'Junior Council', 'Leadership'], runtime: '2026 - 2027', palette: ocean },
       ...achievements.filter(award => !['pratibha-samman', 'jee-main'].includes(award.id)).map((award, i) => ({ code: `S05 E0${i + 2}`, title: award.title, description: award.detail, tags: [award.org], runtime: 'Scholarship', palette: [amber, cream][i] })),
     ],
   },
@@ -355,14 +355,14 @@ export const seasons: Season[] = [
 
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 export const topPicks: TopPick[] = [
-  { label: 'University', title: 'DTU', detail: 'B.Tech Â· Mathematics & Computing', palette: violet },
+  { label: 'University', title: 'DTU', detail: 'B.Tech | Mathematics & Computing', palette: violet },
   { label: 'Current CGPA', title: '9.0 / 10', detail: 'Delhi Technological University', palette: cream },
-  { label: 'JEE Main 2025', title: '98.9', detail: 'Percentile Â· Top 1.1%', palette: jade },
+  { label: 'JEE Main 2025', title: '98.9', detail: 'Percentile | Top 1.1%', palette: jade },
   { label: 'Academic Excellence', title: 'Pratibha Samman Patra 2022', detail: 'Talent Honour Award', palette: amber },
-  { label: 'Leadership', title: 'Technical Design Head', detail: 'SSE Junior Council Â· 2026â€“2027', palette: jade },
-  { label: 'Fellowship', title: 'Machine Learning Analytics Fellow', detail: 'GCI World Â· Matsuoâ€“Iwasawa Lab, UTokyo', palette: ocean },
+  { label: 'Leadership', title: 'Technical Design Head', detail: 'SSE Junior Council | 2026-2027', palette: jade },
+  { label: 'Fellowship', title: 'Machine Learning Analytics Fellow', detail: 'GCI World | Matsuo-Iwasawa Lab, UTokyo', palette: ocean },
   { label: 'Scholarship', title: 'Dell Aspire', detail: 'MSDF-backed merit scholarship', palette: amber },
-  { label: 'Scholarship', title: 'Vijay Shekhar Sharma', detail: 'AY 2026â€“27 Â· DTU Golden Pride Function 2026', palette: cream },
+  { label: 'Scholarship', title: 'Vijay Shekhar Sharma', detail: 'AY 2026-27 | DTU Golden Pride Function 2026', palette: cream },
 ];
 
 export type IntroSlide = { kicker: string; title: string; lines: string[]; chips?: string[] };
@@ -419,7 +419,7 @@ export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} chapters Â· DTU, projects & leadership`, palette: amber },
+  journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} chapters | DTU, projects & leadership`, palette: amber },
   originals: { nav: 'Projects', card: 'My Projects', meta: `${projects.length} AI and web projects`, palette: crimson },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} skill areas`, palette: ocean },
   certifications: { nav: 'Certifications', card: 'Certifications', meta: `${certifications.length} credentials`, palette: amber },

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { achievements, certifications, education, experience, profile, projects, skillCategories } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
 
-/** THE FULL STORY â€” a designed resume preview plus view / download actions. */
+/** THE FULL STORY - a designed resume preview plus view / download actions. */
 export default function ResumeSection({ onView }: { onView: () => void }) {
   return (
     <>
@@ -22,7 +22,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="font-serif text-3xl italic leading-tight text-bone">Every episode, on one page.</p>
           <p className="mt-3 text-sm leading-relaxed text-mist">
-            Education, leadership, projects, awards and {certifications.length} certifications â€” view the resume or download a copy.
+                Education, leadership, projects, awards, and {certifications.length} certifications. View or download the resume.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Magnetic className="w-full">
@@ -32,7 +32,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                 onClick={onView}
                 className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-bone px-6 text-[15px] font-bold text-ink transition hover:bg-white"
               >
-                â–¶ View Resume
+                View Resume
               </button>
             </Magnetic>
             <Magnetic className="w-full">
@@ -42,7 +42,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
                 data-cursor="link"
                 className="glass flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-6 text-[15px] font-semibold text-bone transition hover:bg-white/15"
               >
-                â¤“ Download Resume
+                Download Resume
               </a>
             </Magnetic>
           </div>
@@ -75,7 +75,7 @@ function CollapsibleSheet() {
       {!open && (
         <div className="absolute inset-x-0 bottom-0 flex h-48 items-end justify-center rounded-b-2xl bg-gradient-to-t from-ink via-ink/85 to-transparent pb-4 md:hidden">
           <button type="button" onClick={() => setOpen(true)} className="glass min-h-11 rounded-full px-5 text-sm font-semibold text-bone">
-            Read the full story â†“
+            Read the full story...
           </button>
         </div>
       )}
@@ -102,15 +102,14 @@ export function ResumeSheet() {
             {profile.email}
           </a>
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-bone">
-            LinkedIn â†—
+            LinkedIn
           </a>
-          {' Â· '}
+          {' | '}
           <a href={profile.links.github} target="_blank" rel="noreferrer" className="hover:text-bone">
-            GitHub â†—
+            GitHub
           </a>
-          {' Â· '}
-          <a href={profile.links.leetcode} target="_blank" rel="noreferrer" className="hover:text-bone">LeetCode â†—</a>
-          {' Â· '}
+          {' | '}
+          <a href={profile.links.leetcode} target="_blank" rel="noreferrer" className="hover:text-bone">LeetCode</a>
         </div>
       </header>
 
@@ -126,7 +125,7 @@ export function ResumeSheet() {
                 <p className="text-xs text-smoke">{e.period}</p>
               </div>
               <p className="text-xs text-mist">
-                {e.degree} Â· <span className="text-bone/80">{e.score}</span>
+                {e.degree}  |  <span className="text-bone/80">{e.score}</span>
               </p>
             </div>
           ))}
@@ -136,7 +135,7 @@ export function ResumeSheet() {
             <div key={x.company}>
               <div className="flex flex-wrap justify-between gap-x-3">
                 <p className="text-sm font-semibold text-bone">
-                  {x.company} â€” {x.role}
+                  {x.company} - {x.role}
                 </p>
                 <p className="text-xs text-smoke">{x.period}</p>
               </div>
@@ -179,7 +178,7 @@ export function ResumeSheet() {
             {achievements.map((a) => (
               <li key={a.id} className="text-xs leading-relaxed text-mist">
                 <span className="font-semibold text-bone">
-                  {a.title} â€” {a.org}.
+                  {a.title} - {a.org}.
                 </span>{' '}
                 {a.detail}
               </li>
@@ -190,12 +189,12 @@ export function ResumeSheet() {
           <p className="text-xs leading-relaxed text-mist">
             {Array.from(new Set(certifications.map((c) => c.issuer)))
               .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
-              .join(' Â· ')}
+              .join('  |  ')}
           </p>
           <ul className="mt-2 space-y-2">
             {certifications.map((c) => (
               <li key={c.name} className="text-xs leading-relaxed text-mist">
-                <span className="font-semibold text-bone">{c.name} â€” {c.issuer}.</span> {c.detail}
+                <span className="font-semibold text-bone">{c.name} - {c.issuer}.</span> {c.detail}
               </li>
             ))}
           </ul>
