@@ -8,7 +8,7 @@ import { RailButtons } from './Rail';
 export default function Seasons() {
   const [active, setActive] = useState(Math.max(0, seasons.findIndex(s => s.number === 3)));
   const season = seasons[active];
-  const rail = useRef<HTMLDivElement>(null);
+  const rail = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
