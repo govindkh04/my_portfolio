@@ -68,9 +68,9 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
             transition={{ duration: 0.6 }}
           >
             <motion.p
-              className="font-sans text-xs font-semibold text-mist sm:text-sm"
-              initial={{ letterSpacing: '0.2em', opacity: 0 }}
-              animate={{ letterSpacing: '0.6em', opacity: 1 }}
+              className="w-full px-4 text-center font-sans text-[9px] font-semibold tracking-[0.18em] text-mist sm:text-sm sm:tracking-[0.6em]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 1.6, ease: EASE }}
             >
               {profile.originalLabel}

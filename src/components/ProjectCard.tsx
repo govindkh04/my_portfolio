@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
             }
           }}
           aria-label={`Open ${project.title}`}
-          className="focus-ring relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 transition duration-500 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] md:aspect-auto md:h-[38vh] md:min-h-[280px] md:max-h-[380px]"
+          className="focus-ring relative aspect-square overflow-hidden rounded-2xl ring-1 transition duration-500 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] md:aspect-auto md:h-[38vh] md:min-h-[280px] md:max-h-[380px]"
           style={{
             backgroundColor: `${theme.background}cc`,
             '--tw-ring-color': `${theme.outline}99`,
@@ -66,7 +66,6 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
               ))}
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-2">
-              <span className="flex min-h-10 items-center gap-2 rounded-md bg-bone px-4 text-sm font-bold text-ink transition group-hover:bg-white">▶ View Project</span>
               {project.github && (
                 <a
                   href={project.github}

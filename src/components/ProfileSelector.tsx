@@ -53,12 +53,12 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
         Ready to Dive In?
       </motion.h2>
       <motion.ul
-        className="relative grid grid-cols-2 gap-6 sm:flex sm:gap-8"
+        className="relative flex justify-center gap-6 sm:gap-8"
         initial="hidden"
         animate="show"
         transition={{ staggerChildren: 0.08, delayChildren: 0.2 }}
       >
-        {viewerProfiles.map((p) => (
+        {viewerProfiles.filter((p) => p.id === 'govind').map((p) => (
           <motion.li key={p.id} variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } } }}>
             <button type="button" onClick={() => onPick(p.id)} data-cursor="play" className="group flex flex-col items-center gap-3 text-center">
               <span className="relative rounded-xl ring-2 ring-transparent transition duration-300 group-hover:scale-105 group-hover:ring-bone group-focus-visible:ring-bone">
@@ -72,9 +72,6 @@ export default function ProfileSelector({ onPick }: { onPick: (id: ProfileId) =>
           </motion.li>
         ))}
       </motion.ul>
-      <p className="relative mt-12 max-w-md text-center text-xs leading-relaxed text-smoke">
-        Same core arc, different opening credits. Rooted in first principles, built to solve.
-      </p>
     </motion.div>
   );
 }

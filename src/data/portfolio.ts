@@ -100,7 +100,7 @@ export const projects: Project[] = [
     id: 'ai-portfolio-chatbot',
     title: 'AI Portfolio Chatbot',
     year: '',
-    genre: 'Generative AI Â· Full-Stack',
+    genre: 'Generative AI | Full-Stack',
     logline: 'A conversational portfolio assistant that answers recruiter questions about skills, projects, and experience.',
     stack: ['Python', 'FastAPI', 'Groq', 'JavaScript', 'Render', 'Vercel'],
     build: [
@@ -115,9 +115,9 @@ export const projects: Project[] = [
   },
   {
     id: 'shrinkr',
-    title: 'Shrinkr â€” Browser-Based Media Compressor',
+    title: 'Shrinkr - Browser-Based Media Compressor',
     year: '',
-    genre: 'Chrome Extension Â· Media Compression',
+    genre: 'Chrome Extension | Media Compression',
     logline: 'A browser-based media compressor for audio and other formats, built with a six-member team.',
     stack: ['JavaScript ES6', 'Chrome Extension API', 'Web Audio API', 'LameJS', 'FFmpeg WASM', 'HTML5', 'CSS3'],
     build: [
@@ -132,9 +132,9 @@ export const projects: Project[] = [
   },
   {
     id: 'talentalign',
-    title: 'TalentAlign â€” AI Resume Matcher',
+    title: 'TalentAlign - AI Resume Matcher',
     year: '',
-    genre: 'Generative AI Â· Recruiting',
+    genre: 'Generative AI | Recruiting',
     logline: 'An AI resume-matching system that extracts candidate details and scores them against HR requirements.',
     stack: ['Python', 'Groq API', 'Llama 3.3', 'Pydantic', 'Prompt Engineering', 'JSON'],
     build: [
@@ -149,9 +149,9 @@ export const projects: Project[] = [
   },
   {
     id: 'vidsage',
-    title: 'VidSage â€” AI-Powered YouTube Search & Revision Assistant',
+    title: 'VidSage - AI-Powered YouTube Search & Revision Assistant',
     year: '',
-    genre: 'Generative AI Â· Full-Stack',
+    genre: 'Generative AI | Full-Stack',
     logline: 'A timestamp-aware RAG assistant that makes long DSA YouTube playlists searchable and easier to revise.',
     stack: ['Python', 'FastAPI', 'React', 'RAG', 'Qdrant', 'Groq', 'faster-whisper', 'BGE-M3'],
     build: [
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     id: 'autism-screening-classification',
     title: 'Autism Screening Classification',
     year: '',
-    genre: 'Machine Learning Â· Classification',
+    genre: 'Machine Learning | Classification',
     logline: 'A comparative machine learning study for autism screening with a focus on minority-class performance.',
     stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'SMOTE', 'XGBoost'],
     build: [
