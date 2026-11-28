@@ -370,40 +370,43 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Education', title: 'Mathematics & Computing',
     lines: [
-      `${education[0].school} | ${education[0].place}`,
-      `${education[0].degree} | ${education[0].period}`,
-      `${education[1].school} | Class XII | ${education[1].score}`,
-      `${education[2].school} | Class X | ${education[2].score}`,
+      `${education[0].school} | ${education[0].period}`,
+      `Class XII: ${education[1].score} | Class X: ${education[2].score}`,
     ], chips: [education[0].score],
   },
   {
     kicker: 'Fellowship', title: experience[0].role,
-    lines: [experience[0].company, ...experience[0].points],
+    lines: [experience[0].company, 'LightGBM + CatBoost | ROC-AUC 0.758'],
   },
   {
     kicker: 'Projects', title: 'Selected Builds',
-    lines: projects.map((project) => `${project.title} | ${project.logline}`),
+    lines: projects.map((project) => project.title),
     chips: [`${projects.length} projects`],
   },
   {
     kicker: 'Technical Skills', title: 'Tools & Foundations',
-    lines: skillCategories.map((category) => `${category.title}: ${category.skills.map((skill) => skill.name).join(' | ')}`),
+    lines: [
+      `Programming: ${skillCategories[0].skills.slice(0, 3).map((skill) => skill.name).join(' | ')}`,
+      `AI: ${skillCategories[1].skills.slice(0, 4).map((skill) => skill.name).join(' | ')}`,
+      `Frameworks: ${skillCategories[2].skills.slice(0, 6).map((skill) => skill.name).join(' | ')}`,
+      `Core: ${skillCategories[4].skills.map((skill) => skill.name).join(' | ')}`,
+    ],
   },
   {
     kicker: 'Technical Chapter', title: seasons.find((season) => season.number === 4)?.title ?? 'Technical Skills',
-    lines: seasons.find((season) => season.number === 4)?.episodes.map((episode) => `${episode.title}: ${episode.description} Tags: ${episode.tags.join(' | ')}`) ?? [],
+    lines: seasons.find((season) => season.number === 4)?.episodes.map((episode) => episode.title) ?? [],
   },
   {
     kicker: 'Leadership', title: experience[1].role,
-    lines: [experience[1].company, ...experience[1].points],
+    lines: [experience[1].company, experience[1].period],
   },
   {
     kicker: 'Recognition', title: 'Achievements & Awards',
-    lines: achievements.map((award) => `${award.title} | ${award.detail}`),
+    lines: achievements.map((award) => award.title),
   },
   {
     kicker: 'Certifications', title: 'Learning & Credentials',
-    lines: certifications.map((certification) => `${certification.name} | ${certification.issuer}${certification.detail ? `: ${certification.detail}` : ''}`),
+    lines: certifications.map((certification) => `${certification.name} | ${certification.issuer}`),
   },
   { kicker: 'Contact', title: "Let's build", lines: [profile.email, profile.phone, profile.location] },
 ];

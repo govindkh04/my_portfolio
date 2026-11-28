@@ -6,6 +6,11 @@ import { useReducedMotionPref } from '../hooks/useMedia';
 import { EASE } from './fx';
 
 const SLIDE_MS = 3600;
+const cleanIntroText = (text: string) =>
+  text
+    .replace(/[\u00e2]\u20ac[\u201c\u201d]/g, '-')
+    .replace(/[\u00e2]\u20ac\u2122/g, "'")
+    .replace(/[\u2013\u2014]/g, '-');
 
 /**
  * "▶ Play Intro": darken → zoom into the portrait → a full-screen highlight reel
@@ -137,10 +142,10 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
               transition={{ duration: 0.7, ease: EASE }}
             >
               <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.5em] text-crimson-2 sm:text-xs">
-                Episode {String(index + 1).padStart(2, '0')} · {slide.kicker}
+                Episode {String(index + 1).padStart(2, '0')} · {cleanIntroText(slide.kicker)}
               </p>
               <h2 className="font-display leading-[0.88] text-bone" style={{ fontSize: 'clamp(3rem, 10vw, 8.5rem)' }}>
-                {slide.title}
+                {cleanIntroText(slide.title)}
               </h2>
               <div className="mt-6 space-y-2">
                 {slide.lines.map((l, i) => (
@@ -151,7 +156,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35 + i * 0.15, duration: 0.6, ease: EASE }}
                   >
-                    {l}
+                    {cleanIntroText(l)}
                   </motion.p>
                 ))}
               </div>
@@ -165,7 +170,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.6 + i * 0.06 }}
                     >
-                      {c}
+                      {cleanIntroText(c)}
                     </motion.span>
                   ))}
                 </div>
